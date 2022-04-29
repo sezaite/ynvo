@@ -13,7 +13,7 @@ module.exports = {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
         fonts: [
-          `Red Hat Display\:300,400,400i,600,700`],
+          `Inter\:300,400,400i,500,600`],
         display: 'swap'
       }
     },
