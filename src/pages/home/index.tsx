@@ -1,15 +1,11 @@
 import React, { useState } from 'react';
 import styled from 'styled-components/macro';
-import { Box, Image, SectionWrapper, Typography } from 'components';
+import { Box, Container, Image, SectionWrapper, Typography } from 'components';
 import { useQuery } from 'styles/breakpoints';
 import { theme } from 'styles/theme';
 import { StaticImage } from 'gatsby-plugin-image';
 import { ThemeProvider } from 'styled-components/macro';
 
-// padding: ${theme.space.s64};
-// @media ${tablet} {
-// 	padding: ${theme.space.s48};
-// }
 
 const Home: React.FC = () => {
 	const { isMobile } = useQuery();
@@ -17,11 +13,13 @@ const Home: React.FC = () => {
 	return (
 		<ThemeProvider theme={theme}>
 		<SectionWrapper>
+			<Container backgroundColor='accent'>
 			<Box
 				backgroundColor={{ _: 'secondary', ltablet: 'primary' }}
 				minHeight={isMobile ? '50%' : '100vh'}
 				minWidth='100vw'
 			>
+
 				<Typography type='h1' textAlign='center'>
 					fooood
 				</Typography>
@@ -36,7 +34,9 @@ const Home: React.FC = () => {
 						margin: '0 auto',
 					}}
 				/>
+			
 			</Box>
+			</Container>
 		</SectionWrapper>
 		</ThemeProvider>
 	);

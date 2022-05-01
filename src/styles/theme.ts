@@ -50,6 +50,7 @@ export const theme = {
 		s40: '2.5rem',
 		s48: '3rem',
 		s60: '3.75rem',
+		s64: '4rem',
 		s72: '4..5rem',
 		s80: '5rem',
 
