@@ -1,5 +1,4 @@
 import styled from 'styled-components/macro';
-import { mobile, useQuery } from 'styles/breakpoints';
 import { theme } from 'styles/theme';
 import { tablet } from 'styles/breakpoints';
 import { Colors } from 'styles/theme';

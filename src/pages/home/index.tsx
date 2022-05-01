@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import styled from 'styled-components/macro';
-import { Box, Container, Image, SectionWrapper, Typography } from 'components';
+import { Box, Container, Image, SectionWrapper, Typography, FlexWrapper } from 'components';
 import { useQuery } from 'styles/breakpoints';
 import { theme } from 'styles/theme';
 import { StaticImage } from 'gatsby-plugin-image';
 import { ThemeProvider } from 'styled-components/macro';
+
 
 
 const Home: React.FC = () => {
@@ -14,10 +15,11 @@ const Home: React.FC = () => {
 		<ThemeProvider theme={theme}>
 		<SectionWrapper>
 			<Container backgroundColor='accent'>
-			<Box
+			<FlexWrapper
 				backgroundColor={{ _: 'secondary', ltablet: 'primary' }}
 				minHeight={isMobile ? '50%' : '100vh'}
 				minWidth='100vw'
+				justifyContent='center'
 			>
 
 				<Typography type='h1' textAlign='center'>
@@ -35,7 +37,7 @@ const Home: React.FC = () => {
 					}}
 				/>
 			
-			</Box>
+			</FlexWrapper>
 			</Container>
 		</SectionWrapper>
 		</ThemeProvider>
