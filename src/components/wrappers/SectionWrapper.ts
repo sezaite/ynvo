@@ -11,7 +11,7 @@ interface SectionWrapperStyles {
 
 
 export const SectionWrapper = styled.section<SectionWrapperStyles>`
-	padding: ${theme.space.s64};
+	padding: ${theme.space.s64}; //ar cia reikia taip, ar uztektu ihardcodint spacingus?
 	position: relative;
 	min-height: ${({ minHeight }) => minHeight || ''};
 	background-color: ${({ backgroundColor, theme }) =>
