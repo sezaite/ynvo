@@ -37,7 +37,7 @@ const Home: React.FC = () => {
 					}}
 				/>
 			
-			</FlexWrapper>
+			</GridWrapper>
 			</Container>
 		</SectionWrapper>
 		</ThemeProvider>
