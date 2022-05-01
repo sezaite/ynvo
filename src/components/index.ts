@@ -3,6 +3,7 @@ export * from './wrappers/SectionWrapper';
 export * from './wrappers/Box';
 export * from './wrappers/Container';
 export * from './wrappers/FlexWrapper';
+export * from './wrappers/GridWrapper';
 
 //texts
 // export * from './texts/h1';

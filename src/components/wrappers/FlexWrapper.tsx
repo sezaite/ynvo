@@ -20,11 +20,11 @@ const flexProps = compose(
     order
 );
 
-interface FlexWrapperProps<T> extends AlignItemsProps<T>, AlignContentProps<T>, JustifyItemsProps<T>, JustifyContentProps<T>, FlexWrapProps<T>, FlexDirectionProps<T>, FlexProps<T>, FlexGrowProps<T>, FlexShrinkProps<T>, FlexBasisProps<T>, JustifySelfProps<T>, AlignSelfProps<T>, OrderProps<T> {
+interface FlexWrapperPropsType<T> extends AlignItemsProps<T>, AlignContentProps<T>, JustifyItemsProps<T>, JustifyContentProps<T>, FlexWrapProps<T>, FlexDirectionProps<T>, FlexProps<T>, FlexGrowProps<T>, FlexShrinkProps<T>, FlexBasisProps<T>, JustifySelfProps<T>, AlignSelfProps<T>, OrderProps<T> {
 
 } 
 
-export const FlexWrapper = styled(Box)<FlexWrapperProps<Theme>>`
+export const FlexWrapper = styled(Box)<FlexWrapperPropsType<Theme>>`
     display: flex;
 
     && {

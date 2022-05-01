@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components/macro';
-import { Box, Container, Image, SectionWrapper, Typography, FlexWrapper } from 'components';
+import { Box, Container, Image, SectionWrapper, Typography, FlexWrapper, GridWrapper } from 'components';
 import { useQuery } from 'styles/breakpoints';
 import { theme } from 'styles/theme';
 import { StaticImage } from 'gatsby-plugin-image';
@@ -15,11 +15,11 @@ const Home: React.FC = () => {
 		<ThemeProvider theme={theme}>
 		<SectionWrapper>
 			<Container backgroundColor='accent'>
-			<FlexWrapper
+			<GridWrapper
 				backgroundColor={{ _: 'secondary', ltablet: 'primary' }}
 				minHeight={isMobile ? '50%' : '100vh'}
 				minWidth='100vw'
-				justifyContent='center'
+				
 			>
 
 				<Typography type='h1' textAlign='center'>
