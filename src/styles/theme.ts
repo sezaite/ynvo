@@ -67,37 +67,37 @@ export const theme = {
 	},
 	typography: {
 		h1: {
-			fonstSize: '5rem',
+			fontSize: '5rem',
 			fontSizeMobile: '4rem',
 			fontWeight: 500,
 			lineHeight: '1.3em',
 		},
 		h2: {
-			fonstSize: '4.5rem',
+			fontSize: '4.5rem',
 			fontSizeMobile: '3.5rem',
 			fontWeight: 500,
 			lineHeight: '1.3em',
 		},
 		h3: {
-			fonstSize: '3.5rem',
+			fontSize: '3.5rem',
 			fontSizeMobile: '2.5rem',
 			fontWeight: 600,
 			lineHeight: '1.3em',
 		},
 		h4: {
-			fonstSize: '3rem',
+			fontSize: '3rem',
 			fontSizeMobile: '2rem',
 			fontWeight: 600,
 			lineHeight: '1.3em',
 		},
 		h5: {
-			fonstSize: '2.5rem',
+			fontSize: '2.5rem',
 			fontSizeMobile: '1.625rem',
 			fontWeight: 600,
 			lineHeight: '1.3em',
 		},
 		h6: {
-			fonstSize: '2rem',
+			fontSize: '2rem',
 			fontSizeMobile: '1.5rem',
 			fontWeight: 600,
 			lineHeight: '1.3em',
