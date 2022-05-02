@@ -5,7 +5,8 @@ import { theme } from 'styles/theme';
 const GlobalStyle = createGlobalStyle`
 * {
     box-sizing: border-box;
-    margin: 0
+    margin: 0;
+	padding: 0;
 }
 body {
     overflow: hidden auto;

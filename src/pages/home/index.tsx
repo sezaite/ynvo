@@ -5,14 +5,15 @@ import { useQuery } from 'styles/breakpoints';
 import { theme } from 'styles/theme';
 import { StaticImage } from 'gatsby-plugin-image';
 import { ThemeProvider } from 'styled-components/macro';
+import { InputWrap } from 'components/Input';
 
 
 
 const Home: React.FC = () => {
 	const { isMobile } = useQuery();
+	
 
 	return (
-		<ThemeProvider theme={theme}>
 		<SectionWrapper>
 			<Container backgroundColor='accent'>
 			<GridWrapper
@@ -21,7 +22,8 @@ const Home: React.FC = () => {
 				minWidth='100vw'
 				
 			>
-
+				<InputWrap id="test-input" type="text" placeholder='test test test' label="Test input"> </InputWrap>
+				<InputWrap border="3px solid red" id="test-input-number" type="number" placeholder='74125' label="Test input"> </InputWrap>
 				<Typography type='h1' textAlign='center'>
 					fooood
 				</Typography>
@@ -40,7 +42,6 @@ const Home: React.FC = () => {
 			</GridWrapper>
 			</Container>
 		</SectionWrapper>
-		</ThemeProvider>
 	);
 };
 

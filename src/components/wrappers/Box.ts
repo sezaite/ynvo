@@ -4,6 +4,8 @@ import {
 	AlignSelfProps,
 	border,
 	BorderProps,
+	borderRadius,
+	BorderRadiusProps,
 	BoxShadowProps,
 	color,
 	ColorProps,
@@ -28,6 +30,7 @@ import { Theme } from 'styles/theme';
 
 const boxProps = compose(
 	space,
+	borderRadius,
 	color,
 	display,
 	position,
@@ -38,8 +41,9 @@ const boxProps = compose(
 	textAlign
 );
 
-interface Styles<T>
+export interface BoxStyles<T>
 	extends BorderProps<T>,
+	BorderRadiusProps<T>,
 		ColorProps<T>,
 		PositionProps<T>,
 		ZIndexProps<T>,
@@ -50,7 +54,7 @@ interface Styles<T>
 		TextAlignProps<T>,
 		SpaceProps<T> {}
 
-export const Box = styled.div<Styles<Theme>>`
+export const Box = styled.div<BoxStyles<Theme>>`
 	&& {
 		${boxProps};
 	}

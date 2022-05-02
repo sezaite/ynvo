@@ -103,6 +103,30 @@ export const theme = {
 			fontWeight: 600,
 			lineHeight: '1.3em',
 		},
+		body16: {
+			fontSize: '1rem',
+			fontSizeMobile: '0.875rem',
+			fontWeight: 400,
+			lineHeight: '1.3em',
+		},
+		body14: {
+			fontSize: '0.875rem',
+			fontSizeMobile: '0.75rem',
+			fontWeight: 400,
+			lineHeight: '1.3em',
+		},
+		caption12: {
+			fontSize: '0.75rem',
+			fontSizeMobile: '0.5rem',
+			fontWeight: 400,
+			lineHeight: '1.3em',
+		},
+		label12: {
+			fontSize: '0.75rem',
+			fontSizeMobile: '0.5rem',
+			fontWeight: 400,
+			lineHeight: '1.3em',
+		}
 	},
 	opacity: {
 		1: 1,
