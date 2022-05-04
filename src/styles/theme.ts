@@ -21,7 +21,10 @@ const background = {
 export const theme = {
 	colors,
 	background, 
-	fontFamily: {primary: 'Inter'},
+	fontFamily: {
+		primary: 'Inter',
+		secondary: 'source sans pro'
+	},
 	fontSizes: {
 		fs64: '4rem',
 		fs48: '3rem',
