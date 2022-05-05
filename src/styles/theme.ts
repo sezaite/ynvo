@@ -3,10 +3,14 @@ export type Background = keyof typeof background;
 
 const colors = {
 	primary: '#E5E5E5',//light grey
-	secondary:  '#E7FAFE',//light blue
+	secondary:  '#DCE1E9',
+	primaryQuiz: '#CEAFB9',
 	accent: '#FF6363',//orange
+	text: '#363732',
 	white: '#ffffff',
-	black: '#000000',
+	black: '#131515',
+	deepBlue: '#162c3a',
+	creamPeach: '#dba988'
 };
 
 const background = {
@@ -22,8 +26,9 @@ export const theme = {
 	colors,
 	background, 
 	fontFamily: {
-		primary: 'Inter',
-		secondary: 'source sans pro'
+		title: 'Yeseva One',
+		primary: 'Roboto',
+		secondary: 'Work Sans'
 	},
 	fontSizes: {
 		fs64: '4rem',
@@ -64,6 +69,8 @@ export const theme = {
 		radius24: '1.5rem',
 		radius20: '1.25rem',
 		radius16: '1rem',
+		radius8: '0.5rem',
+		radius4: '0.25rem',
 		circle: '50%',
 	},
 	borders: {
