@@ -3,7 +3,7 @@ import { QuizCardStyled } from './QuizCardStyled'
 
 const QuizCardRadio = () => {
   return (
-    <QuizCardStyled backgroudColor='secondary'>
+    <QuizCardStyled backgroundColor='secondary'>
 
     </QuizCardStyled>
   )

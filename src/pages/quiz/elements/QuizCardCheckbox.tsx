@@ -10,7 +10,7 @@ export interface QuizCardProps {
 
 const QuizCardCheckbox: React.FC<QuizCardProps> = ({question, answers, caption}) => {
   return (
-    <QuizCardStyled backgroudColor='deepBlue'>
+    <QuizCardStyled backgroundColor='primary'>
         <Typography type='h3'>{question}</Typography>
         <Typography type='caption12'> { caption ? caption : 'Select multiple answers'}</Typography>
 

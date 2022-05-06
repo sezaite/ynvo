@@ -4,13 +4,13 @@ export type Background = keyof typeof background;
 const colors = {
 	primary: '#E5E5E5',//light grey
 	secondary:  '#DCE1E9',
-	primaryQuiz: '#CEAFB9',
+	primaryquiz: '#CEAFB9',
 	accent: '#FF6363',//orange
 	text: '#363732',
 	white: '#ffffff',
 	black: '#131515',
-	deepBlue: '#162c3a',
-	creamPeach: '#dba988'
+	deepblue: '#162c3a',
+	creampeach: '#dba988'
 };
 
 const background = {

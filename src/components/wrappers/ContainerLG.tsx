@@ -5,7 +5,7 @@ import { Container } from "./Container";
 import { tablet } from 'styles/breakpoints';
 
 interface ContainerLGProps {
-    backgroudColor?: Colors,
+    backgroundColor?: Colors,
 }
 
 export const ContainerLG = styled(Container)<ContainerLGProps>`

@@ -22,10 +22,10 @@ const Quiz: React.FC = () => {
     }, [data]);
     
     return (
-            <SectionWrapper backgroundColor='primaryQuiz'>
+            <SectionWrapper backgroundColor='primaryquiz'>
             {isFetching ? <Loader></Loader> : <QuizCardCheckbox></QuizCardCheckbox>}
             <Container backgroundColor='secondary'></Container>
-            <ContainerLG backgroundColor='deepBlue'></ContainerLG>
+            <ContainerLG backgroundColor='deepblue'></ContainerLG>
             </SectionWrapper>
            
     )

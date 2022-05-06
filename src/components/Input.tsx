@@ -3,14 +3,14 @@ import styled from "styled-components/macro";
 import { Theme } from "styles/theme";
 import {Box, BoxStyles, Typography, FlexWrapper} from 'components';
 
-export type InputProp = 'text' | 'number' | 'password' | 'email' | 'date';
+// export type InputProp = 'text' | 'number' | 'password' | 'email' | 'date';
 
 interface InputProps extends React.InputHTMLAttributes<HTMLIFrameElement> {
     id: string;
     minValue?: number;
     maxValue?: number;
     placeholder?: string;
-    type: InputProp;
+    // type: InputProp;
     onChange?: ()=> void;
     border?: string;
     borderRadius?: string;
@@ -39,9 +39,9 @@ export const InputWrap: React.FC<InputWrapProps> = ({
         <FlexWrapper flexDirection="column">
             {label && <Typography type="label12" htmlFor={id}>{label}</Typography>}
             {type=='number' || type=='date' ? 
-            <input id={id} type={type} value={value} onChange={(e: React.FormEvent<HTMLInputElement>)=>setValue(e.currentTarget.value)} placeholder={placeholder? placeholder : ""} min={minValue ? minValue : 0} max={maxValue ? maxValue : Infinity}/> 
+            <Box as="input" id={id} type={type} value={value} onChange={(e: React.FormEvent<HTMLInputElement>)=>setValue(e.currentTarget.value)} placeholder={placeholder? placeholder : ""} min={minValue ? minValue : 0} max={maxValue ? maxValue : Infinity}/> 
             :
-            <input id={id} type={type} value={value} onChange={(e: React.FormEvent<HTMLInputElement>)=>setValue(e.currentTarget.value)} placeholder={placeholder? placeholder : ""}/>
+            <Box as="input" id={id} type={type} value={value} onChange={(e: React.FormEvent<HTMLInputElement>)=>setValue(e.currentTarget.value)} placeholder={placeholder? placeholder : ""}/>
 }
             
             {isError && <Typography type="caption12" color="accent">{errorMessage}</Typography>}
