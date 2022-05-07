@@ -10,7 +10,6 @@ export const QuizCardStyled = styled(Box)`
     border-radius: ${theme.radii['radius16']};
     border: 1px solid green;
     padding: ${theme.space.s40} ${theme.space.s30};
-    /* background-color: ${( { backgroundColor } ) => backgroundColor? theme.colors[backgroundColor] : ""}; */
 `
 
 

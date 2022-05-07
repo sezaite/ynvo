@@ -1,21 +1,19 @@
 import { Typography } from 'components';
 import React from 'react'
 import { QuizCardStyled } from './QuizCardStyled'
+import { QuizQuestionType }  from '../../../typings/generalTypes';
 
-export interface QuizCardProps {
-    question?: string;
-    answers?: Array<string>;
-    caption?: string;
+interface QuizStyled {
+  questionData: QuizQuestionType;
 }
-
-const QuizCardCheckbox: React.FC<QuizCardProps> = ({question, answers, caption}) => {
+//kodel negaliu propso tipizuoti funkcijos viduje? ir turiu kurti interfeisa?
+const QuizCardRadio: React.FC<QuizStyled> = ({questionData}) => {
   return (
     <QuizCardStyled backgroundColor='primary'>
-        <Typography type='h3'>{question}</Typography>
-        <Typography type='caption12'> { caption ? caption : 'Select multiple answers'}</Typography>
-
+      <Typography type="h3">{questionData.question}</Typography>
+      <Typography>{questionData.caption ? questionData.caption : "Pick a few"}</Typography>
     </QuizCardStyled>
   )
 }
 
-export default QuizCardCheckbox
+export default QuizCardRadio

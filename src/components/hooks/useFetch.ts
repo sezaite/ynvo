@@ -1,8 +1,9 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
+import { QuizQuestionType } from 'typings/generalTypes';
 
 const useFetch = (url: string) => {
-    const [data, setData] = useState<Array<object>>([]);
+    const [data, setData] = useState<Array<QuizQuestionType>>([]);
     const [isFetching, setIsFetching] = useState<boolean>(true);
     const [error, setError] = useState<boolean>(false);
 
@@ -10,7 +11,6 @@ const useFetch = (url: string) => {
         if (!url) return;
         axios.get(url).then(res => {
             setData(res.data);
-            console.log(res.data);
             setIsFetching(false);
             setError(false)
         }).catch(err => {
