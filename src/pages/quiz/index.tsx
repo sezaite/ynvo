@@ -7,24 +7,46 @@ import { Loader } from './elements/Loader';
 import { theme } from 'styles/theme';
 import QuizCardCheckbox from './elements/QuizCardCheckbox';
 import {QuizFooter, QuizNav, MainQuizSection} from './sections';
-import { QuizQuestionType } from 'typings/generalTypes';
+import { useSelector, useDispatch } from 'react-redux';
+import { fetchQuestions } from 'state/thunks';
+import { useAppDispatch } from 'state/store';
+import { DefaultButton } from 'components/buttons/DefaultButton';
+import { selectCurrentQuestion } from 'state/selectors';
+import { incrementCurrentQuestion, decrementCurrentQuestion } from 'state/slice';
+
 
 
 const Quiz: React.FC = () => {
-    const [quizData, setQuizData] = useState<Array<QuizQuestionType>>([]);//nezinau, ar sito prireiks
-    const { data, isFetching, error } = useFetch(`page-data/quiz/quiz.json`);
+const dispatch = useAppDispatch();
+const currentQuestion = useSelector(selectCurrentQuestion);
 
-    const [currentQuestion, setCurrentQuestion] = useState<number>(0);
+const incre = ()=> {
+  console.log(currentQuestion);
+  dispatch(incrementCurrentQuestion());
+}
 
-    useEffect(() => {
-        if (data !== null) {
-            setQuizData(data)
-        }
-    }, [data]);
+const decre = ()=> {
+  console.log(currentQuestion);
+  dispatch(decrementCurrentQuestion());
+}
+  
+  useEffect(() => {
+		dispatch(fetchQuestions());
+   
+	}, []);
+
+
+
   return (
       <>
     <QuizNav/> 
-        {isFetching ? <Loader/> : <MainQuizSection currentQuestion={currentQuestion} setCurrentQuestion={setCurrentQuestion} quizData={quizData}></MainQuizSection>}
+    <DefaultButton onClick={() => incre()}>
+					Increment
+				</DefaultButton>
+    <QuizFooter/>
+    <DefaultButton onClick={() => decre()}>
+					Decrement
+				</DefaultButton>
     <QuizFooter/>
     </>
   )
