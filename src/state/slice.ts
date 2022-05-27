@@ -1,8 +1,8 @@
 import { createSlice, PayloadAction, AnyAction } from "@reduxjs/toolkit";
 import { fetchQuestions } from "./thunks";
-import { QuizState, QuestionState, AnswerType } from "./types";
+import { QuizState, QuestionState, AnswerType, SelectedAnswersType } from "./types";
 
-const initialState: QuizState = {
+export const initialState: QuizState = {
   questions: [],
   currentQuestion: 0,
   status: "idle",
@@ -12,8 +12,12 @@ const quizSlice = createSlice({
     name: 'quiz',
     initialState,
     reducers: {
-        setAnswers: (state: any, actions: PayloadAction<AnswerType>) => {
-           
+        setAnswers: (state, actions: PayloadAction<QuestionState>) => {
+                if (actions.payload) {
+                   state.questions[actions.payload.id - 1] = {
+                       ...actions.payload
+                   }
+                }
         },
         incrementCurrentQuestion: (state) => {
             state.currentQuestion++;
@@ -30,6 +34,7 @@ const quizSlice = createSlice({
 				if (action.payload) {
 					state.questions = action.payload;
 					state.status = 'success';
+            
 				}
 			}
 		);
@@ -43,7 +48,7 @@ const quizSlice = createSlice({
 	},
 }); 
 
-export const { incrementCurrentQuestion, decrementCurrentQuestion } = quizSlice.actions;
-export default quizSlice;
+export const { setAnswers, incrementCurrentQuestion, decrementCurrentQuestion } = quizSlice.actions;
+export default quizSlice.reducer;
 
 

@@ -2,23 +2,18 @@ export type Colors = keyof typeof colors;
 export type Background = keyof typeof background;
 
 const colors = {
-	primary: '#E5E5E5',//light grey
-	secondary:  '#DCE1E9',
-	primaryquiz: '#CEAFB9',
-	accent: '#FF6363',//orange
-	text: '#363732',
+	primary: '#A1BD94',//light green
+	secondary: '#F8FCCB', //very light green 
+	light: '#FAE5C8',
+	accent: '#CB6551',//peach
+	text: '#071A13',//darkgreen
 	white: '#ffffff',
 	black: '#131515',
-	deepblue: '#162c3a',
-	creampeach: '#dba988'
+	darkgreen: '#386A5A',//teal muted
 };
 
 const background = {
-	primaryGradient: 'linear-gradient(180deg, rgba(231, 249, 253, 0) 0%, #E7F9FD 100%);',
-	greenGradient: 'linear-gradient(180deg, rgba(108, 198, 63, 0) 0%, rgba(108, 198, 63, 0.1) 100%)',
-	redGradient: 'linear-gradient(180deg, rgba(204, 38, 27, 0) 0%, rgba(204, 38, 27, 0.1) 100%)',
-	greyGradient: 'linear-gradient(180deg, rgba(112, 130, 70, 0) 0%, rgba(112, 130, 70, 0.1) 100%);',
-	yellowGradient: 'linear-gradient(180deg, rgba(240, 158, 0, 0) 0%, rgba(240, 158, 0, 0.1) 100%);',
+	primaryGradient: 'linear-gradient(291deg, rgba(255,255,255,0) 0%, rgba(7,26,19,1) 100%)',
 	blackGradient: 'linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.05) 100%);'
 }
 
@@ -26,7 +21,8 @@ export const theme = {
 	colors,
 	background, 
 	fontFamily: {
-		title: 'Yeseva One',
+		title: 'Raleway',
+		titleSecondary: 'Yeseva One',
 		primary: 'Roboto',
 		secondary: 'Work Sans'
 	},
@@ -39,6 +35,7 @@ export const theme = {
 		fs14: '0.875rem',
 	},
 	fontWeights: {
+		fw900: 900,
 		fw600: 600,
 		fw500: 500,
 		fw400: 400, 
@@ -46,7 +43,7 @@ export const theme = {
 	lineHeight: {
 		lh: '1.3em',
 	},
-	breakpoints: ['24rem', '47rem', '90rem'] as unknown as Breakpoints,
+	breakpoints: ['24rem', '47rem', '62rem', '90rem'] as unknown as Breakpoints,
 	space: {
 		s8: '0.5rem',
 		s10: '0.625rem',
@@ -74,18 +71,21 @@ export const theme = {
 		circle: '50%',
 	},
 	borders: {
-		primary: '1px solid rgba(0, 0, 0, 0.1);'
+		primary: '1px solid rgba(0, 0, 0, 0.1);',
+		accent: '1px solid #FF6363;' 
 	},
 	typography: {
 		h1: {
-			fontSize: '5rem',
-			fontSizeMobile: '4rem',
-			fontWeight: 500,
+			fontSize: '4.5rem',
+			fontSizeTablet: '4rem',
+			fontSizeMobile: '3rem',
+			fontWeight: 900,
 			lineHeight: '1.3em',
 		},
 		h2: {
 			fontSize: '4.5rem',
-			fontSizeMobile: '3.5rem',
+			fontSizeTablet: '4rem',
+			fontSizeMobile: '3rem',
 			fontWeight: 500,
 			lineHeight: '1.3em',
 		},
@@ -111,6 +111,12 @@ export const theme = {
 			fontSize: '2rem',
 			fontSizeMobile: '1.5rem',
 			fontWeight: 600,
+			lineHeight: '1.3em',
+		},
+		body20: {
+			fontSize: '1.25rem',
+			fontSizeMobile: '1rem',
+			fontWeight: 400,
 			lineHeight: '1.3em',
 		},
 		body16: {
@@ -155,11 +161,13 @@ export type Theme = typeof theme;
 const Breakpoints = theme.breakpoints as any;
 Breakpoints.lmobile = Breakpoints[0];
 Breakpoints.ltablet = Breakpoints[1];
-Breakpoints.desktop = Breakpoints[2];
+Breakpoints.ltablet = Breakpoints[2];
+Breakpoints.desktop = Breakpoints[3];
 
 type Breakpoints<T = string> = {
 	_: T;
 	lmobile: T;
+	tablet: T;
 	ltablet: T;
 	desktop: T;
 };

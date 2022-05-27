@@ -1,19 +1,78 @@
-import { Typography } from 'components';
-import React from 'react'
-import { QuizCardStyled } from './QuizCardStyled'
-import { QuizQuestionType }  from '../../../typings/generalTypes';
+import React, { useEffect, useState } from 'react'
+import { QuestionState, AnswerType } from 'state/types';
+import { QuizCardStyled, QuizSelectOption } from '.';
+import {GridWrapper, Typography} from '../../../components';
+import {incrementCurrentQuestion, decrementCurrentQuestion, setAnswers} from 'state/slice';
+import { theme } from 'styles/theme';
+import { selectCurrentQuestion, selectQuizQuestion } from 'state/selectors';
+import { useDispatch, useSelector } from 'react-redux';
+import { useAppDispatch } from 'state/store';
+import { DefaultButton } from 'components/buttons/DefaultButton';
 
 interface QuizStyled {
-  questionData: QuizQuestionType;
+  questionData: QuestionState;
+  setCurrentStep?: React.Dispatch<React.SetStateAction<number>>;
+  isLast: boolean;
+  }
+  
+export const QuizCardCheckbox: React.FC<QuizStyled> = ({questionData, isLast}) => {
+  const [question, setQuestion] = useState(questionData);
+  const [answers, setQuizAnswers] = useState(questionData.answers);
+  const [isButtonDisabled, setIsButtonDisabled] = useState(true);
+  const dispatch = useAppDispatch();
+  const onClickOption = (selectedID:number) => {
+  setQuizAnswers((prevState)=> {
+    return prevState.map((answer) => {
+      const updatedAnswer = {...answer};
+      if (selectedID == answer.id) {
+        if (answer.isSelected) {
+          updatedAnswer.isSelected = false;
+        } else {
+          updatedAnswer.isSelected = true;
+        }
+      }
+      return updatedAnswer;
+    })
+  });
 }
-//kodel negaliu propso tipizuoti funkcijos viduje? ir turiu kurti interfeisa?
-const QuizCardRadio: React.FC<QuizStyled> = ({questionData}) => {
+
+useEffect(()=> {
+  setQuestion(questionData);
+  setQuizAnswers(questionData.answers);
+}, [questionData]);
+
+   useEffect(()=>{
+    setQuestion((prevState) => {
+      const updatedState = {...prevState};
+      updatedState.answers = answers;
+      return updatedState;
+    });
+    answers.find((answer) => answer.isSelected) ? setIsButtonDisabled(false) : setIsButtonDisabled(true);
+  }, [answers]);
+
+  useEffect(()=>{
+    dispatch(setAnswers(question));
+  }, [question]);
+
+const submitQuestion = () => {
+  !isButtonDisabled && dispatch(incrementCurrentQuestion());
+}
+
+
   return (
-    <QuizCardStyled backgroundColor='primary'>
-      <Typography type="h3">{questionData.question}</Typography>
-      <Typography>{questionData.caption ? questionData.caption : "Pick a few"}</Typography>
+    <QuizCardStyled backgroundColor='primary' border='1px solid red'>
+      <Typography textAlign="center" mb="s24">{questionData.caption ? questionData.caption : "Select as many as you want"}</Typography>
+      <Typography>{questionData.id}</Typography>
+      <GridWrapper gridGap="16px" gridTemplateColumns={questionData.answers.length > 3 ? "1fr 1fr" : "1fr"}> 
+      {
+     question.answers.map(({ answer, id, isSelected })=>(
+          <QuizSelectOption isSelected={isSelected} key={id} option={answer} id={id} onClickOption={onClickOption}></QuizSelectOption>
+      ))
+        }
+        </GridWrapper>
+
+      <DefaultButton isDisabled={isButtonDisabled} type="button" onClick={submitQuestion}>{isLast? "Find my scent" : "Next"}</DefaultButton>
+
     </QuizCardStyled>
   )
 }
-
-export default QuizCardRadio

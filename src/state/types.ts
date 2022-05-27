@@ -1,9 +1,14 @@
-import { rootReducer } from "./store";
+// import { rootReducer } from "./store";
 import { Statuses } from "typings/generalTypes";
-import { store } from "./store";
+import { rootReducer, store } from "./store";
 
 
 // export type QuestionTypes = "checkbox" | "radio";
+
+export interface SelectedAnswersType {
+    id: number, 
+    answers: Array<number>
+}
 
 export interface AnswerType {
     id: number,
@@ -23,6 +28,8 @@ export interface QuizState {
     currentQuestion: number,
     status: Statuses,
     questions: QuestionState[],
+    // answers: SelectedAnswersType[],
 }
 
-export type AppState = ReturnType<typeof store.getState>;
+// export type AppState = ReturnType<typeof store.getState>;
+export type AppState = ReturnType<typeof rootReducer>

@@ -1,8 +1,20 @@
+import { Box, Container, Typography } from 'components'
 import React from 'react'
 
-export const QuizNav = () => {
+interface NavProps {
+  totalQuestions: number;
+  currentStep: number;
+}
+
+export const QuizNav:React.FC<NavProps> = ({totalQuestions, currentStep}) => {
   return (
-    <div>QuizNav</div>
+    <Container>
+      <Box>
+        <Typography>
+           {currentStep + 1} / {totalQuestions}
+        </Typography>
+      </Box>
+    </Container>
   )
 }
 

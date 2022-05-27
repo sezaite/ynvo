@@ -2,6 +2,7 @@
 import { css } from 'styled-components/macro';
 import { Theme, theme } from 'styles/theme';
 import { TextType } from './Typography';
+import { tablet } from 'styles/breakpoints';
 
 
 export const applyTextType = (type: TextType, theme: Theme) => {
@@ -11,42 +12,52 @@ export const applyTextType = (type: TextType, theme: Theme) => {
 				font-size: ${theme.typography.h1.fontSize};
 				font-weight: ${theme.typography.h1.fontWeight};
 				line-height: 1.3em;
-				font-family: ${theme.fontFamily.secondary};
+				font-family: ${theme.fontFamily.title};
+				text-transform: uppercase;
+				@media ${tablet} {
+					font-size: ${theme.typography.h1.fontSizeMobile};
+				}
 			`;
 		case 'h2':
 			return css`
 				font-size: ${theme.typography.h2.fontSize};
 				font-weight: ${theme.typography.h2.fontWeight};
 				line-height: 1.3em;
-				font-family: ${theme.fontFamily.secondary};
+				font-family: ${theme.fontFamily.title};
+				@media ${tablet} {
+					font-size: ${theme.typography.h2.fontSizeMobile};
+				}
 			`;
 		case 'h3':
 			return css`
 				font-size: ${theme.typography.h3.fontSize};
 				font-weight: ${theme.typography.h3.fontWeight};
 				line-height: 1.3em;
-				font-family: ${theme.fontFamily.secondary};
+				font-family: ${theme.fontFamily.title};
+				@media ${tablet} {
+					font-size: ${theme.typography.h3.fontSizeMobile};
+				}
 			`;
 		case 'h4':
 			return css`
 				font-size: ${theme.typography.h4.fontSize};
 				font-weight: ${theme.typography.h4.fontWeight};
 				line-height: 1.3em;
-				font-family: ${theme.fontFamily.secondary};
+				font-family: ${theme.fontFamily.title};
 			`;
 		case 'h5':
 			return css`
 				font-size: ${theme.typography.h5.fontSize};
 				font-weight: ${theme.typography.h5.fontWeight};
 				line-height: 1.3em;
-				font-family: ${theme.fontFamily.secondary};
+				font-family: ${theme.fontFamily.title};
 			`;
 		case 'h6':
 			return css`
 				font-size: ${theme.typography.h6.fontSize};
 				font-weight: ${theme.typography.h6.fontWeight};
 				line-height: 1.3em;
-				font-family: ${theme.fontFamily.secondary};
+				font-family: ${theme.fontFamily.title};
 			`;
 		case 'body16':
 			return css`
@@ -56,6 +67,14 @@ export const applyTextType = (type: TextType, theme: Theme) => {
 				font-family: ${theme.fontFamily.primary};
 				
 			`;
+			case 'body20':
+				return css`
+					font-size: ${theme.typography.body20.fontSize};
+					font-weight: ${theme.typography.body20.fontWeight};
+					line-height: 1.3em;
+					font-family: ${theme.fontFamily.primary};
+					
+				`;
 		case 'body14':
 			return css`
 				font-size: ${theme.typography.body14.fontSize};

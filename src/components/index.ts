@@ -13,3 +13,7 @@ export * from './typography/Typography';
 
 //images
 export * from './Image';
+
+//inputs 
+
+export * from './Input';

@@ -17,7 +17,7 @@ import { Colors, Theme } from 'styles/theme';
 
 import { applyTextType } from './TypographyHelpers';
 
-export type TextType = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'body16' | 'body14' | 'caption12' | 'span' | 'label12';
+export type TextType = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'body20' | 'body16' | 'body14' | 'caption12' | 'span' | 'label12';
 
 export enum TextTag {
 	'h1' = 'h1',
@@ -27,6 +27,7 @@ export enum TextTag {
 	'h5' = 'h5',
 	'h6' = 'h6',
 	'span' = 'span',
+	'body20' = 'p',
 	'body16' = 'p',
 	'body14' = 'p',
 	'caption12' = 'p',

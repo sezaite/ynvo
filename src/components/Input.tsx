@@ -36,7 +36,7 @@ export const InputWrap: React.FC<InputWrapProps> = ({
     const [isError, setIserror] = useState(true);
     const [value, setValue] = useState<string>("");
     return (
-        <FlexWrapper flexDirection="column">
+        <FlexWrapper>
             {label && <Typography type="label12" htmlFor={id}>{label}</Typography>}
             {type=='number' || type=='date' ? 
             <Box as="input" id={id} type={type} value={value} onChange={(e: React.FormEvent<HTMLInputElement>)=>setValue(e.currentTarget.value)} placeholder={placeholder? placeholder : ""} min={minValue ? minValue : 0} max={maxValue ? maxValue : Infinity}/> 

@@ -13,6 +13,7 @@ module.exports = {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
         fonts: [
+          `Raleway\:300,400,400i,500, 600,700, 900`,
           `Yeseva One`,
           `Roboto\:300,400,400i,500, 600, 700`,
           `Work Sans\:300,400,400i,500, 600, 700`],

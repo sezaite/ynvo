@@ -6,6 +6,7 @@ import { Colors } from 'styles/theme';
 interface SectionWrapperStyles {
 	minHeight?: string;
 	backgroundColor?: Colors;
+
 }
 
 
