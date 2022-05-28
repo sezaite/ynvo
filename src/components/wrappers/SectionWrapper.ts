@@ -2,23 +2,14 @@ import styled from 'styled-components/macro';
 import { theme } from 'styles/theme';
 import { tablet } from 'styles/breakpoints';
 import { Colors } from 'styles/theme';
+import { Box } from './Box';
 
-interface SectionWrapperStyles {
-	minHeight?: string;
-	backgroundColor?: Colors;
-
-}
-
-
-export const SectionWrapper = styled.section<SectionWrapperStyles>`
-	padding: ${theme.space.s64}; //ar cia reikia taip, ar uztektu ihardcodint spacingus?
+export const SectionWrapper = styled(Box).attrs({ as: 'section' })`
+	padding: ${theme.space.s64} 0 ; 
 	position: relative;
-	min-height: ${({ minHeight }) => minHeight || ''};
-	background-color: ${({ backgroundColor, theme }) =>
-		backgroundColor ? theme.colors[backgroundColor] : ''};
 		
 		@media ${tablet} {
-			padding: ${theme.space.s48};
+			padding: ${theme.space.s48} 0;
 		}
 	
 `;

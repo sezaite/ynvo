@@ -2,28 +2,31 @@ export type Colors = keyof typeof colors;
 export type Background = keyof typeof background;
 
 const colors = {
-	primary: '#A1BD94',//light green
-	secondary: '#F8FCCB', //very light green 
-	light: '#FAE5C8',
-	accent: '#CB6551',//peach
-	text: '#071A13',//darkgreen
+	primary: '#E5E5E5',//light grey
+	secondary: '#A5C099', //light green 
+	accent: '#CF9EAC',//dirty pink
+	dark: '#1f1d1d',//dark
 	white: '#ffffff',
 	black: '#131515',
-	darkgreen: '#386A5A',//teal muted
+	accentGradient: 'linear-gradient(291deg, rgba(207,158,172,1) 0%, rgba(31,29,29,0.958420868347339) 100%)',
+	
 };
 
 const background = {
-	primaryGradient: 'linear-gradient(291deg, rgba(255,255,255,0) 0%, rgba(7,26,19,1) 100%)',
-	blackGradient: 'linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.05) 100%);'
+	accentGradient: 'linear-gradient(291deg, rgba(207,158,172,1) 0%, rgba(31,29,29,0.958420868347339) 100%)',
+	blackGradient: 'linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.05) 100%);',
+	softGradient: 'linear-gradient(291deg, rgba(207,158,172,0.8015581232492998) 0%, rgba(229,229,229,0.8519782913165266) 100%);',
+	secondaryGradient: 'linear-gradient(180deg, rgba(165,192,153,1) 0%, rgba(229,229,229,1) 100%)',
+	whiteGradient: 'linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(229,229,229,1) 100%);',
 }
 
 export const theme = {
 	colors,
 	background, 
 	fontFamily: {
-		title: 'Raleway',
+		title: 'Playfair Display',
 		titleSecondary: 'Yeseva One',
-		primary: 'Roboto',
+		primary: 'Poppins',
 		secondary: 'Work Sans'
 	},
 	fontSizes: {
@@ -45,18 +48,21 @@ export const theme = {
 	},
 	breakpoints: ['24rem', '47rem', '62rem', '90rem'] as unknown as Breakpoints,
 	space: {
+		s0: '0',
 		s8: '0.5rem',
 		s10: '0.625rem',
-		s13: '0.8125rem',
+		s12: '0.75rem',
+		s14: '0.875rem',
 		s16: '1rem',
 		s20: '1.25rem',
 		s24: '1.5rem',
 		s30: '1.875rem',
 		s40: '2.5rem',
 		s48: '3rem',
+		s56: '3.5rem',
 		s60: '3.75rem',
 		s64: '4rem',
-		s72: '4..5rem',
+		s72: '4.5rem',
 		s80: '5rem',
 
 	},
@@ -75,19 +81,26 @@ export const theme = {
 		accent: '1px solid #FF6363;' 
 	},
 	typography: {
+		jumbo: {
+			fontSize: '7rem',
+			lineHeight: '1em',
+			fontWeight: 700,
+			fontSizeMobile: "6rem",
+		},
 		h1: {
-			fontSize: '4.5rem',
-			fontSizeTablet: '4rem',
+			fontSize: '4.125rem',
+			fontSizeDesktop: '3.8rem',
+			fontSizeTablet: '3.4rem',
 			fontSizeMobile: '3rem',
-			fontWeight: 900,
-			lineHeight: '1.3em',
+			fontWeight: 400,
+			lineHeight: '1.18em',
 		},
 		h2: {
-			fontSize: '4.5rem',
-			fontSizeTablet: '4rem',
+			fontSize: '3.8rem',
+			fontSizeTablet: '3.4rem',
 			fontSizeMobile: '3rem',
-			fontWeight: 500,
-			lineHeight: '1.3em',
+			fontWeight: 400,
+			lineHeight: '1.18em',
 		},
 		h3: {
 			fontSize: '3.5rem',
@@ -98,19 +111,19 @@ export const theme = {
 		h4: {
 			fontSize: '3rem',
 			fontSizeMobile: '2rem',
-			fontWeight: 600,
+			fontWeight: 400,
 			lineHeight: '1.3em',
 		},
 		h5: {
 			fontSize: '2.5rem',
 			fontSizeMobile: '1.625rem',
-			fontWeight: 600,
+			fontWeight: 400,
 			lineHeight: '1.3em',
 		},
 		h6: {
 			fontSize: '2rem',
 			fontSizeMobile: '1.5rem',
-			fontWeight: 600,
+			fontWeight: 400,
 			lineHeight: '1.3em',
 		},
 		body20: {
@@ -123,7 +136,7 @@ export const theme = {
 			fontSize: '1rem',
 			fontSizeMobile: '0.875rem',
 			fontWeight: 400,
-			lineHeight: '1.3em',
+			lineHeight: '1.875em',
 		},
 		body14: {
 			fontSize: '0.875rem',
@@ -144,13 +157,18 @@ export const theme = {
 			lineHeight: '1.3em',
 		}
 	},
+	letterSpacing: {
+		normal: 0,
+		theme: '0.02em'
+	},
+
 	opacity: {
-		1: 1,
-		60: 0.6,
+		full: 1,
+		op60: 0.6,
 	},
 	zIndex: {
 		base: 0,
-		upperElement: 1,
+		upperElement: 2,
 		modal: 10,
 		loader: 11,
 	}

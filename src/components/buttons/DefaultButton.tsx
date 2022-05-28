@@ -1,11 +1,13 @@
 import React from 'react';
 import styled from 'styled-components/macro';
+import { Colors } from 'styles/theme';
 
 import { BaseButton, DefaultButtonProps } from './elements/BaseButton';
 
 interface ButtonProps extends DefaultButtonProps {
 	isDisabled?: boolean;
 	onClick?: ()=>void;
+	backgroundColor?: Colors;
 }
 
 export const DefaultButton: React.FC<ButtonProps> = ({
@@ -27,18 +29,16 @@ export const DefaultButton: React.FC<ButtonProps> = ({
 
 const Button = styled(BaseButton)<DefaultButtonProps>`
 	width: fit-content;
-	box-shadow: ${({ theme }) => `9px 10px 22px -11px ${theme.colors.text}`};
-	letter-spacing: 0.3rem;
-	font-size:  ${({ theme }) => theme.fontSizes.fs18};
-	font-family:  ${({ theme }) => theme.fontFamily.secondary};
-	box-shadow:  ${({ theme }) => theme.colors.darkgreen};
+	font-size:  ${({ theme }) => theme.fontSizes.fs16};
+	font-family:  ${({ theme }) => theme.fontFamily.primary};
+	letter-spacing: 0.02em;
 	color: ${({ theme }) => theme.colors.primary};
-	background-color: ${({ theme }) => theme.colors.darkgreen};
-	padding: ${({ theme }) => `${theme.space.s16} ${theme.space.s30}`};
-	border: ${({ theme }) => `2px solid ${theme.colors.darkgreen}`};
-	border-radius: ${({ theme }) => theme.radii.radius30};
+	background-color: ${({ theme }) => theme.colors.accent};
+	padding: ${({ theme }) => `${theme.space.s12} ${theme.space.s20}`};
+	/* border: ${({ theme }) => `2px solid ${theme.colors.accent}`}; */
+	border: none;
 	transition: all 0.2s ease-in;
-	text-transform: uppercase;
+	/* text-transform: uppercase; */
 	cursor: pointer;
 	&:hover {
 		transform: scale(1.03);

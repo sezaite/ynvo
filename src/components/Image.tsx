@@ -11,6 +11,7 @@ interface Styles {
 	height?: string;
 	margin?: string;
 	maxHeight?: string;
+	radius?: string;
 }
 
 interface ImageProps extends Styles {
@@ -26,6 +27,7 @@ const Img = styled.img<Styles>`
 	width: ${({ width }) => width || ''};
 	height: ${({ height }) => height || ''};
 	max-height: ${({ maxHeight }) => maxHeight || ''};
+	border-radius: ${({ radius }) => radius || ''};
 `;
 
 export const Image: React.FC<ImageProps> = ({

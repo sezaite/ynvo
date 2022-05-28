@@ -18,7 +18,7 @@ export const SectionWithFullImg = styled(SectionWrapper)<SectionWrapperStyles>`
     background-position: center;
     height: 100vh;
     z-index: 1;
-    &:after {
+    /* &:after {
         content: "";
         position: absolute;
         top: 0;
@@ -29,13 +29,13 @@ export const SectionWithFullImg = styled(SectionWrapper)<SectionWrapperStyles>`
         opacity: 0.5;
         z-index: -1;
 
-    }
+    } */
     @media ${tablet} {
         height: 85vh;
-        background-position: 100%;
-        &:after {
+        /* background-position: 100%; */
+        /* &:after {
             opacity: 0.8;
-        }
+        } */
     }
     
 `;

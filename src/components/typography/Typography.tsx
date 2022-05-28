@@ -11,15 +11,18 @@ import {
 	TypographyProps,
 	textStyle,
 	typography,
+	opacity,
+	OpacityProps
 } from 'styled-system';
 
 import { Colors, Theme } from 'styles/theme';
 
 import { applyTextType } from './TypographyHelpers';
 
-export type TextType = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'body20' | 'body16' | 'body14' | 'caption12' | 'span' | 'label12';
+export type TextType = 'jumbo' | 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'body20' | 'body16' | 'body14' | 'caption12' | 'span' | 'label12';
 
 export enum TextTag {
+	'jumbo' = 'p',
 	'h1' = 'h1',
 	'h2' = 'h2',
 	'h3' = 'h3',
@@ -42,10 +45,11 @@ const typographyProperties = compose(
 	lineHeight,
 	textStyle,
 	typography,
-	space
+	space,
+	opacity,
 );
 
-export interface TextProps extends SpaceProps<Theme>, TypographyProps<Theme> {
+export interface TextProps extends SpaceProps<Theme>, OpacityProps<Theme>, TypographyProps<Theme> {
 	color?: Colors;
 	type?: TextType;
 	textTransform?: Property.TextTransform;

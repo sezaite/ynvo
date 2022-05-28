@@ -2,18 +2,33 @@
 import { css } from 'styled-components/macro';
 import { Theme, theme } from 'styles/theme';
 import { TextType } from './Typography';
-import { tablet } from 'styles/breakpoints';
+import { desktop, tablet } from 'styles/breakpoints';
 
 
 export const applyTextType = (type: TextType, theme: Theme) => {
 	switch (type) {
+		case 'jumbo':
+			return css`
+				font-size: ${theme.typography.jumbo.fontSize};
+				font-weight: ${theme.typography.jumbo.fontWeight};
+				line-height: ${theme.typography.jumbo.lineHeight};
+				font-family: ${theme.fontFamily.title};
+				/* text-transform: uppercase; */
+				@media ${tablet} {
+					font-size: ${theme.typography.jumbo.fontSizeMobile};
+				}
+			`;
 		case 'h1':
 			return css`
 				font-size: ${theme.typography.h1.fontSize};
 				font-weight: ${theme.typography.h1.fontWeight};
-				line-height: 1.3em;
+				line-height: ${theme.typography.h1.lineHeight};
 				font-family: ${theme.fontFamily.title};
-				text-transform: uppercase;
+				letter-spacing:  ${theme.letterSpacing.theme};
+				/* text-transform: uppercase; */
+				@media ${desktop} {
+					font-size: ${theme.typography.h1.fontSizeDesktop};
+				}
 				@media ${tablet} {
 					font-size: ${theme.typography.h1.fontSizeMobile};
 				}
@@ -22,8 +37,9 @@ export const applyTextType = (type: TextType, theme: Theme) => {
 			return css`
 				font-size: ${theme.typography.h2.fontSize};
 				font-weight: ${theme.typography.h2.fontWeight};
-				line-height: 1.3em;
+				line-height: ${theme.typography.h2.lineHeight};
 				font-family: ${theme.fontFamily.title};
+				letter-spacing:  ${theme.letterSpacing.theme};
 				@media ${tablet} {
 					font-size: ${theme.typography.h2.fontSizeMobile};
 				}
@@ -63,7 +79,8 @@ export const applyTextType = (type: TextType, theme: Theme) => {
 			return css`
 				font-size: ${theme.typography.body16.fontSize};
 				font-weight: ${theme.typography.body16.fontWeight};
-				line-height: 1.3em;
+				line-height: ${theme.typography.body16.lineHeight};
+				letter-spacing:  ${theme.letterSpacing.theme};
 				font-family: ${theme.fontFamily.primary};
 				
 			`;
@@ -71,7 +88,7 @@ export const applyTextType = (type: TextType, theme: Theme) => {
 				return css`
 					font-size: ${theme.typography.body20.fontSize};
 					font-weight: ${theme.typography.body20.fontWeight};
-					line-height: 1.3em;
+					line-height: ${theme.typography.body20.lineHeight};
 					font-family: ${theme.fontFamily.primary};
 					
 				`;

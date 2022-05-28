@@ -11,7 +11,7 @@ const fetchQuestionsPrefix = 'quiz/GET_QUESTIONS';
              const {data}: AxiosResponse = await axios.get(url);
              return data;
          } catch (e) {
-             //pagalvoti error handlinima
+             //TODO:apgalvoti error handlinima
              console.log(e);
          }
 

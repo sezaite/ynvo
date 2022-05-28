@@ -2,6 +2,8 @@ import styled from 'styled-components/macro';
 import {
 	alignSelf,
 	AlignSelfProps,
+	background,
+	BackgroundProps,
 	border,
 	BorderProps,
 	borderRadius,
@@ -30,7 +32,7 @@ import { Theme } from 'styles/theme';
 
 const boxProps = compose(
 	space,
-	borderRadius,
+	background,
 	color,
 	display,
 	position,
@@ -43,6 +45,7 @@ const boxProps = compose(
 
 export interface BoxStyles<T>
 	extends BorderProps<T>,
+	BackgroundProps<T>,
 	BorderRadiusProps<T>,
 		ColorProps<T>,
 		PositionProps<T>,

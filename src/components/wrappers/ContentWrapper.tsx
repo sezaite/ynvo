@@ -1,15 +1,18 @@
 import React from "react";
 import styled from "styled-components/macro";
 import { Box } from "./Box";
-import { tablet } from 'styles/breakpoints';
+import { mobile, desktop } from 'styles/breakpoints';
 
 
 export const ContentWrapper = styled(Box)`
-    margin: '0 auto';
-    padding: '0 1rem';
-    max-width: '58rem';
-    @media ${tablet} {
-        max-width: '100%';
+    margin: 0 auto;
+    padding: 0 1rem;
+    max-width: 48rem;
+    @media ${desktop} {
+        max-width: 42rem;
+    }
+    @media ${mobile} {
+        max-width: 100%;
     }
 
 `
