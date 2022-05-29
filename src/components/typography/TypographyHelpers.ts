@@ -12,7 +12,7 @@ export const applyTextType = (type: TextType, theme: Theme) => {
 				font-size: ${theme.typography.jumbo.fontSize};
 				font-weight: ${theme.typography.jumbo.fontWeight};
 				line-height: ${theme.typography.jumbo.lineHeight};
-				font-family: ${theme.fontFamily.title};
+				font-family: ${theme.fontFamily.secondary};
 				/* text-transform: uppercase; */
 				@media ${tablet} {
 					font-size: ${theme.typography.jumbo.fontSizeMobile};

@@ -3,12 +3,16 @@ export type Background = keyof typeof background;
 
 const colors = {
 	primary: '#E5E5E5',//light grey
-	secondary: '#A5C099', //light green 
+	// secondary: '#A5C099', //light green 
+	secondary: '#57704b',
+	selected: '#577a46',
 	accent: '#CF9EAC',//dirty pink
 	dark: '#1f1d1d',//dark
+	light: '#fdfbec',
 	white: '#ffffff',
 	black: '#131515',
-	accentGradient: 'linear-gradient(291deg, rgba(207,158,172,1) 0%, rgba(31,29,29,0.958420868347339) 100%)',
+	transparent: 'transparent',
+	
 	
 };
 
@@ -18,7 +22,8 @@ const background = {
 	softGradient: 'linear-gradient(291deg, rgba(207,158,172,0.8015581232492998) 0%, rgba(229,229,229,0.8519782913165266) 100%);',
 	secondaryGradient: 'linear-gradient(180deg, rgba(165,192,153,1) 0%, rgba(229,229,229,1) 100%)',
 	whiteGradient: 'linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(229,229,229,1) 100%);',
-}
+	lightDirtyGradient: ' linear-gradient(180deg, rgba(224,212,212,0.6839110644257703) 0%, rgba(229,229,229,1) 100%);',
+}	
 
 export const theme = {
 	colors,
@@ -42,12 +47,17 @@ export const theme = {
 		fw600: 600,
 		fw500: 500,
 		fw400: 400, 
+		fw300: 300, 
 	},
-	lineHeight: {
-		lh: '1.3em',
+	lineHeights: {
+		lhReg: '1.3em',
+		lh1: '1em',
+		lh0: '0',
 	},
-	breakpoints: ['24rem', '47rem', '62rem', '90rem'] as unknown as Breakpoints,
+	breakpoints: ['24rem', '35rem', '47rem', '62rem', '90rem'] as unknown as Breakpoints,
 	space: {
+		sTinyMinus: '-0.7rem',
+		auto: 'auto',
 		s0: '0',
 		s8: '0.5rem',
 		s10: '0.625rem',
@@ -78,7 +88,7 @@ export const theme = {
 	},
 	borders: {
 		primary: '1px solid rgba(0, 0, 0, 0.1);',
-		accent: '1px solid #FF6363;' 
+		accent: '1px solid #CF9EAC;' 
 	},
 	typography: {
 		jumbo: {
@@ -115,14 +125,14 @@ export const theme = {
 			lineHeight: '1.3em',
 		},
 		h5: {
-			fontSize: '2.5rem',
-			fontSizeMobile: '1.625rem',
+			fontSize: '1.5rem',
+			fontSizeMobile: '1rem',
 			fontWeight: 400,
 			lineHeight: '1.3em',
 		},
 		h6: {
-			fontSize: '2rem',
-			fontSizeMobile: '1.5rem',
+			fontSize: '1rem',
+			fontSizeMobile: '0.6rem',
 			fontWeight: 400,
 			lineHeight: '1.3em',
 		},
@@ -166,9 +176,10 @@ export const theme = {
 		full: 1,
 		op60: 0.6,
 	},
-	zIndex: {
+	zIndices: {
 		base: 0,
-		upperElement: 2,
+		upperElement: 4,
+		topElement: 6,
 		modal: 10,
 		loader: 11,
 	}
@@ -178,9 +189,10 @@ export type Theme = typeof theme;
 
 const Breakpoints = theme.breakpoints as any;
 Breakpoints.lmobile = Breakpoints[0];
-Breakpoints.ltablet = Breakpoints[1];
-Breakpoints.ltablet = Breakpoints[2];
-Breakpoints.desktop = Breakpoints[3];
+Breakpoints.mobile = Breakpoints[1];
+Breakpoints.tablet = Breakpoints[2];
+Breakpoints.ltablet = Breakpoints[3];
+Breakpoints.desktop = Breakpoints[4];
 
 type Breakpoints<T = string> = {
 	_: T;

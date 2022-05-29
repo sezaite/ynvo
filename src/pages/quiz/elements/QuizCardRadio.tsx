@@ -59,9 +59,9 @@ useEffect(()=> {
 
 
   return (
-    <QuizCardStyled backgroundColor='primary' border='1px solid red'>
+    <QuizCardStyled backgroundColor='white'>
       <Typography textAlign="center" mb="s24">{questionData.caption ? questionData.caption : "Pick the one which suits you best"}</Typography>
-      <Typography>{questionData.id}</Typography>
+    
       <GridWrapper gridGap="16px" gridTemplateColumns={questionData.answers.length > 3 ? "1fr 1fr" : "1fr"}> 
       {
      question.answers.map(({ answer, id, isSelected })=>(

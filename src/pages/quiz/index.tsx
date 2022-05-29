@@ -1,7 +1,6 @@
 
 import React, {useState, useEffect} from 'react';
-import { Container, SectionWrapper, Typography } from 'components';
-import { Loader } from './elements/Loader';
+import { Container, SectionWrapper, Typography, Image, Loader, Box, FlexWrapper } from 'components';
 import {QuizNav} from './sections';
 import {QuizCardCheckbox, QuizCardRadio } from './elements';
 import { useSelector } from 'react-redux';
@@ -11,6 +10,8 @@ import { selectCurrentQuestion, selectQuizQuestion, selectStatus } from 'state/s
 import { QuestionState } from 'state/types';
 import { DefaultButton } from 'components/buttons/DefaultButton';
 import { decrementCurrentQuestion } from 'state/slice';
+import styled from 'styled-components/macro'
+import { CalculatingResults } from './sections/CalculatingResults';
 
 
 
@@ -26,9 +27,7 @@ const totalQuestions = questions.length;
 const [isLast, setIsLast] = useState(false);
 const [count, setCount] = useState(0);
 
-const handleBack = () => {
-  dispatch(decrementCurrentQuestion());
-}
+
 
 useEffect(() => {
     dispatch(fetchQuestions());
@@ -54,38 +53,54 @@ useEffect(()=> {
 
 
   return (
-    <>
-   {
-     status == 'success' && currentQuestion ? 
-     <>
-     {
-       currentStep > 0 ? <DefaultButton type="button" onClick={handleBack}>Back</DefaultButton> : ""
-     }
-      <QuizNav totalQuestions={totalQuestions} currentStep={currentStep}/> 
-        <SectionWrapper>
-          <Container>
-            <Typography type="h3" textAlign="center" mb="s60">{currentQuestion['question']}</Typography>
-          
+      <SectionWrapper backgroundColor='primary'>
             {
-              currentQuestion.type == "checkbox" ?
-              <Container>
-                     <QuizCardCheckbox isLast={isLast} questionData={currentQuestion}></QuizCardCheckbox>
-              </Container>
-             
+            
+              status == 'success' && currentQuestion ? 
+            <>
+              <AbsoluteImageLines src="shape1" alt="decoration shape"></AbsoluteImageLines>
+              <AbsoluteImageCircle src="shape2" alt="decoration shape"></AbsoluteImageCircle>
+                <QuizNav totalQuestions={totalQuestions} currentStep={currentStep}/> 
+                
+                    <Container>
+                      <Typography type="h3" textAlign="center" mb="s60">{currentQuestion['question']}</Typography>
+                    
+                      {
+                        currentQuestion.type == "checkbox" ?
+                        <Container>
+                              <QuizCardCheckbox isLast={isLast} questionData={currentQuestion}></QuizCardCheckbox>
+                        </Container>
+                      
+                        :
+                        <Container>
+                          <QuizCardRadio isLast={isLast} questionData={currentQuestion}/>
+                        </Container>
+                      }
+                    </Container>
+            </>
               :
-              <Container>
-                <QuizCardRadio isLast={isLast} questionData={currentQuestion}/>
-              </Container>
+              <CalculatingResults></CalculatingResults>
             }
-          </Container>
-        </SectionWrapper> 
-    </>
-     :
-    <Loader/>
-   }
+</SectionWrapper> 
 
-</>
   )
 }
 
 export default Quiz
+
+export const AbsoluteImageLines = styled(Image)`
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translate(0%, -50%);
+  z-index: 2;
+`
+export const AbsoluteImageCircle = styled(Image)`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 60%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+
+`

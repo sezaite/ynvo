@@ -1,4 +1,4 @@
-import { Box, Typography } from "components";
+import { Box, FlexWrapper, Typography, Image } from "components";
 import React, { ReactNode, useState } from "react";
 import styled from "styled-components/macro";
 import { theme } from "styles/theme";
@@ -26,19 +26,24 @@ export const QuizSelectOption: React.FC<Props> = ({option, id, onClickOption, is
     }
     return (
         
-        <OptionStyled onClick={()=>handleClick()} border={isSelected ? `1px solid ${theme.colors.deepblue}` : `1px solid ${theme.colors.primary}`}>
-            <Typography>{option}</Typography>
+        <OptionStyled position='relative' onClick={()=>handleClick()} border={isSelected ? `1px solid ${theme.colors.secondary}` : ''}>
+            <Typography color={isSelected ? 'selected' : 'dark'} >{option}</Typography>
+            {
+                isSelected ?  <Box position='absolute' top='s8' right='s8'><Image src="tickCircle" alt="checkmark"></Image></Box> : ""
+            }
+           
+            
         </OptionStyled>
     )
 }
 
 const OptionStyled = styled(Box)`
     border-radius: ${theme.radii['radius8']};
-    border: 1px solid ${theme.colors.deepblue};
+    border: 1px solid ${theme.colors.transparent};
     padding: ${theme.space.s16} ${theme.space.s24};
-
+    background-color: white;
     &:hover {
-        border: 1px solid ${theme.colors.deepblue};
+        border: 1px solid ${theme.colors.secondary};
     }
 `
 

@@ -12,7 +12,9 @@ import {
 	textStyle,
 	typography,
 	opacity,
-	OpacityProps
+	OpacityProps,
+	fontStyle,
+	FontStyleProps
 } from 'styled-system';
 
 import { Colors, Theme } from 'styles/theme';

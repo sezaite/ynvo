@@ -12,6 +12,9 @@ interface Styles {
 	margin?: string;
 	maxHeight?: string;
 	radius?: string;
+	objectFit?: string;
+	hoverColor?: string;
+	maxWidthMobile?: string;
 }
 
 interface ImageProps extends Styles {
@@ -28,6 +31,13 @@ const Img = styled.img<Styles>`
 	height: ${({ height }) => height || ''};
 	max-height: ${({ maxHeight }) => maxHeight || ''};
 	border-radius: ${({ radius }) => radius || ''};
+	object-fit: ${({ objectFit }) => objectFit || ''};
+	//TODO: svg elements and hovers
+
+	@media ${mobile}{
+		max-width: ${({ maxWidthMobile }) => maxWidthMobile || ''};
+		
+	}
 `;
 
 export const Image: React.FC<ImageProps> = ({
@@ -38,11 +48,11 @@ export const Image: React.FC<ImageProps> = ({
 	...rest
 }) => {
 	return (
-		<LazyLoad height={200}>
+		// <LazyLoad height={200}>
 			<picture onClick={onClick}>
 				{mobile_src && <source media={mobile} srcSet={visuals[mobile_src]} />}
 				<Img src={visuals[src]} alt={alt} {...rest} />
 			</picture>
-		</LazyLoad>
+		// </LazyLoad>
 	);
 };

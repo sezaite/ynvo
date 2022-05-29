@@ -5,6 +5,8 @@ import { rootReducer, store } from "./store";
 
 // export type QuestionTypes = "checkbox" | "radio";
 
+
+
 export interface SelectedAnswersType {
     id: number, 
     answers: Array<number>

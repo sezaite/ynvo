@@ -39,9 +39,9 @@ export const InputWrap: React.FC<InputWrapProps> = ({
         <FlexWrapper>
             {label && <Typography type="label12" htmlFor={id}>{label}</Typography>}
             {type=='number' || type=='date' ? 
-            <Box as="input" id={id} type={type} value={value} onChange={(e: React.FormEvent<HTMLInputElement>)=>setValue(e.currentTarget.value)} placeholder={placeholder? placeholder : ""} min={minValue ? minValue : 0} max={maxValue ? maxValue : Infinity}/> 
+            <Box border={border} as="input" py='s10' px='s16' id={id} type={type} value={value} onChange={(e: React.FormEvent<HTMLInputElement>)=>setValue(e.currentTarget.value)} placeholder={placeholder? placeholder : ""} min={minValue ? minValue : 0} max={maxValue ? maxValue : Infinity}/> 
             :
-            <Box as="input" id={id} type={type} value={value} onChange={(e: React.FormEvent<HTMLInputElement>)=>setValue(e.currentTarget.value)} placeholder={placeholder? placeholder : ""}/>
+            <Box border={border} as="input" py='s10' px='s16' id={id} type={type} value={value} onChange={(e: React.FormEvent<HTMLInputElement>)=>setValue(e.currentTarget.value)} placeholder={placeholder? placeholder : ""}/>
 }
             
             {isError && <Typography type="caption12" color="accent">{errorMessage}</Typography>}

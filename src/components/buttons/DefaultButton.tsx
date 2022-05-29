@@ -32,7 +32,7 @@ const Button = styled(BaseButton)<DefaultButtonProps>`
 	font-size:  ${({ theme }) => theme.fontSizes.fs16};
 	font-family:  ${({ theme }) => theme.fontFamily.primary};
 	letter-spacing: 0.02em;
-	color: ${({ theme }) => theme.colors.primary};
+	color: ${({ theme }) => theme.colors.white};
 	background-color: ${({ theme }) => theme.colors.accent};
 	padding: ${({ theme }) => `${theme.space.s12} ${theme.space.s20}`};
 	/* border: ${({ theme }) => `2px solid ${theme.colors.accent}`}; */
@@ -41,6 +41,6 @@ const Button = styled(BaseButton)<DefaultButtonProps>`
 	/* text-transform: uppercase; */
 	cursor: pointer;
 	&:hover {
-		transform: scale(1.03);
+		background-color: ${({ theme }) => theme.colors.dark};
 	}
 `;

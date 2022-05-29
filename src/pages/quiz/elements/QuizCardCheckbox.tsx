@@ -60,9 +60,8 @@ const submitQuestion = () => {
 
 
   return (
-    <QuizCardStyled backgroundColor='primary' border='1px solid red'>
+    <QuizCardStyled backgroundColor='light'>
       <Typography textAlign="center" mb="s24">{questionData.caption ? questionData.caption : "Select as many as you want"}</Typography>
-      <Typography>{questionData.id}</Typography>
       <GridWrapper gridGap="16px" gridTemplateColumns={questionData.answers.length > 3 ? "1fr 1fr" : "1fr"}> 
       {
      question.answers.map(({ answer, id, isSelected })=>(
@@ -71,7 +70,7 @@ const submitQuestion = () => {
         }
         </GridWrapper>
 
-      <DefaultButton isDisabled={isButtonDisabled} type="button" onClick={submitQuestion}>{isLast? "Find my scent" : "Next"}</DefaultButton>
+      <DefaultButton mt='s24' px='s40' mx='auto' isDisabled={isButtonDisabled} type="button" onClick={submitQuestion}>{isLast? "Find my scent" : "Next"}</DefaultButton>
 
     </QuizCardStyled>
   )
