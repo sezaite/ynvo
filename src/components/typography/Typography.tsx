@@ -59,6 +59,7 @@ export interface TextProps extends SpaceProps<Theme>, OpacityProps<Theme>, Typog
 	onClick?: () => void;
 	children: ReactNode;
 	htmlFor?: string;
+	whiteSpace?: string;
 }
 
 export const Typography: React.FC<TextProps> = ({
@@ -89,4 +90,5 @@ const Text = styled.p<TextProps>`
 	}
 	text-transform: ${({ textTransform }) => textTransform || ''};
 	text-decoration: ${({ textDecoration }) => textDecoration || ''};
+	white-space: ${({ whiteSpace }) => whiteSpace || ''};
 `;
