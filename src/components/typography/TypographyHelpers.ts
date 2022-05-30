@@ -24,7 +24,7 @@ export const applyTextType = (type: TextType, theme: Theme) => {
 				font-weight: ${theme.typography.h1.fontWeight};
 				line-height: ${theme.typography.h1.lineHeight};
 				font-family: ${theme.fontFamily.title};
-				letter-spacing:  ${theme.letterSpacing.theme};
+				letter-spacing:  ${theme.letterSpacings.theme};
 				/* text-transform: uppercase; */
 				@media ${desktop} {
 					font-size: ${theme.typography.h1.fontSizeDesktop};
@@ -39,7 +39,7 @@ export const applyTextType = (type: TextType, theme: Theme) => {
 				font-weight: ${theme.typography.h2.fontWeight};
 				line-height: ${theme.typography.h2.lineHeight};
 				font-family: ${theme.fontFamily.title};
-				letter-spacing:  ${theme.letterSpacing.theme};
+				letter-spacing:  ${theme.letterSpacings.theme};
 				@media ${tablet} {
 					font-size: ${theme.typography.h2.fontSizeMobile};
 				}
@@ -80,7 +80,7 @@ export const applyTextType = (type: TextType, theme: Theme) => {
 				font-size: ${theme.typography.body16.fontSize};
 				font-weight: ${theme.typography.body16.fontWeight};
 				line-height: ${theme.typography.body16.lineHeight};
-				letter-spacing:  ${theme.letterSpacing.theme};
+				letter-spacing:  ${theme.letterSpacings.theme};
 				font-family: ${theme.fontFamily.primary};
 				
 			`;

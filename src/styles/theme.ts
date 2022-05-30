@@ -12,6 +12,7 @@ const colors = {
 	white: '#ffffff',
 	black: '#131515',
 	transparent: 'transparent',
+	darkaccent: '#3B2415',
 	
 	
 };
@@ -54,7 +55,7 @@ export const theme = {
 		lh1: '1em',
 		lh0: '0',
 	},
-	breakpoints: ['24rem', '35rem', '47rem', '62rem', '90rem'] as unknown as Breakpoints,
+	breakpoints: ['24rem', '30rem', '47rem', '62rem', '90rem'] as unknown as Breakpoints,
 	space: {
 		sTinyMinus: '-0.7rem',
 		auto: 'auto',
@@ -99,16 +100,16 @@ export const theme = {
 		},
 		h1: {
 			fontSize: '4.125rem',
-			fontSizeDesktop: '3.8rem',
-			fontSizeTablet: '3.4rem',
-			fontSizeMobile: '3rem',
+			fontSizeDesktop: '3.4rem',
+			fontSizeTablet: '3.2rem',
+			fontSizeMobile: '2rem',
 			fontWeight: 400,
 			lineHeight: '1.18em',
 		},
 		h2: {
 			fontSize: '3.8rem',
-			fontSizeTablet: '3.4rem',
-			fontSizeMobile: '3rem',
+			fontSizeTablet: '3.0rem',
+			fontSizeMobile: '2.5rem',
 			fontWeight: 400,
 			lineHeight: '1.18em',
 		},
@@ -167,9 +168,10 @@ export const theme = {
 			lineHeight: '1.3em',
 		}
 	},
-	letterSpacing: {
+	letterSpacings: {
 		normal: 0,
-		theme: '0.02em'
+		theme: '0.02em',
+		large: '0.1em',
 	},
 
 	opacity: {
@@ -188,14 +190,15 @@ export const theme = {
 export type Theme = typeof theme;
 
 const Breakpoints = theme.breakpoints as any;
-Breakpoints.lmobile = Breakpoints[0];
-Breakpoints.mobile = Breakpoints[1];
+Breakpoints.mobile = Breakpoints[0];
+Breakpoints.lmobile = Breakpoints[1];
 Breakpoints.tablet = Breakpoints[2];
 Breakpoints.ltablet = Breakpoints[3];
 Breakpoints.desktop = Breakpoints[4];
 
 type Breakpoints<T = string> = {
 	_: T;
+	mobile: T;
 	lmobile: T;
 	tablet: T;
 	ltablet: T;

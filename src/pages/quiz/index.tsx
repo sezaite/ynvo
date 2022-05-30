@@ -1,6 +1,6 @@
 
 import React, {useState, useEffect} from 'react';
-import { Container, SectionWrapper, Typography, Image, Loader, Box, FlexWrapper } from 'components';
+import { Container, SectionWrapper, Typography, Image, Loader, Box, FlexWrapper, AbsoluteImageCircle, AbsoluteImageLines } from 'components';
 import {QuizNav} from './sections';
 import {QuizCardCheckbox, QuizCardRadio } from './elements';
 import { useSelector } from 'react-redux';
@@ -88,19 +88,4 @@ useEffect(()=> {
 
 export default Quiz
 
-export const AbsoluteImageLines = styled(Image)`
-  position: absolute;
-  top: 0;
-  left: 0;
-  transform: translate(0%, -50%);
-  z-index: 2;
-`
-export const AbsoluteImageCircle = styled(Image)`
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 60%;
-  transform: translate(-50%, -50%);
-  z-index: 2;
 
-`

@@ -27,6 +27,19 @@ ul {
 h1, h2, h3, h4, h5, h6 {
 	font-family: ${theme.fontFamily.title};
 }
+
+.swiper-pagination-bullet-active {
+	background: ${theme.colors.accent}!important;
+}
+
+.swiper-pagination {
+	bottom: 0!important;
+}
+
+.swiper-wrapper {
+	align-items: center;
+}
+
 `;
 
 export const wrapRootElement = ({ element }: any) => (

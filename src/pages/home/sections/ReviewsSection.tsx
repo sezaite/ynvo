@@ -38,9 +38,6 @@ export const Reviews: React.FC = () => {
 }
 
 const StyledSwiper = styled(Swiper)`
-    padding: 0rem;
+    padding: 0 0 2rem 0;
 `
 
-const StyledBullet = styled.div`
-
-`

@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components/macro';
 import LazyLoad from 'react-lazyload';
 
-import { mobile } from 'styles/breakpoints';
+import { mobile, tablet } from 'styles/breakpoints';
 import { Visuals, visuals } from 'utils/visuals';
 
 interface Styles {
@@ -34,7 +34,7 @@ const Img = styled.img<Styles>`
 	object-fit: ${({ objectFit }) => objectFit || ''};
 	//TODO: svg elements and hovers
 
-	@media ${mobile}{
+	@media ${tablet}{
 		max-width: ${({ maxWidthMobile }) => maxWidthMobile || ''};
 		
 	}

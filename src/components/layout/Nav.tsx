@@ -1,9 +1,8 @@
 import { Box } from "components";
 import { DefaultButton } from "components/buttons/DefaultButton";
-import { Typography } from "components/typography/Typography";
-import { Container } from "components/wrappers/Container";
-import { FlexWrapper } from "components/wrappers/FlexWrapper";
-import { SectionWrapper } from "components/wrappers/SectionWrapper";
+
+import { FlexWrapper, Image, SectionWrapper, Container, Typography } from "components";
+
 import { Link } from "gatsby";
 import { StaticImage } from "gatsby-plugin-image";
 import React from "react";
@@ -15,11 +14,11 @@ export const Navigation: React.FC = () => {
         <Box py="s16" position='absolute' top='0' left='0' width='100%' zIndex='2'>
                 <Container>
                     <FlexWrapper width='100%' justifyContent="space-between" alignItems="center">
-                        <Typography type='body20' color="primary">L o G o</Typography>
+                        <Image src='logo' alt='logo' width="3rem"></Image>
                         <FlexWrapper as="ul" justifyContent='flex-end' alignItems="center">
-                            <Box as ="li"><Link to="#"><Typography mr='s40' textDecoration='none' color="primary">About</Typography></Link></Box>
-                            <Box as ="li"><Link to="#"><Typography mr='s40' textDecoration='none' color="primary">Features</Typography></Link></Box>
-                            <Box as ="li"><Link to="#"><Typography mr='s40' textDecoration='none' color="primary">Reviews</Typography></Link></Box>
+                            <Box as ="li" mr={{_: 's20', tablet: 's40'}} ><Link to="#"><Typography textDecoration='none' color="primary">About</Typography></Link></Box>
+                            <Box as ="li" mr={{_: 's20', tablet: 's40'}}><Link to="#"><Typography textDecoration='none' color="primary">Features</Typography></Link></Box>
+
                             <Box as ="li"><DefaultButton>Contact</DefaultButton></Box>
                         </FlexWrapper>
                     </FlexWrapper>

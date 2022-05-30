@@ -20,12 +20,10 @@ export const SampleHunt:React.FC = () => {
 
   return (
     <SectionWrapper backgroundColor='light'>
-          {/* <AbsoluteImageLines src="shape1" alt="decoration shape"></AbsoluteImageLines> */}
-      <AbsoluteImageCircleRight src="shape2" alt="decoration shape"></AbsoluteImageCircleRight>
          <Container zIndex='upperElement'>
           <ContentWrapper>
               <Typography type='h4' mb='s30' textAlign='center'>
-                Not yet ready for commitment? Grab a sample!
+                Not yet ready to commit? Grab a sample!
               </Typography>
               <Typography opacity='op60' mb='s30'>Here are a few of our most active Fragrance Junkies who are willing to share</Typography>
 
@@ -45,9 +43,3 @@ export const SampleHunt:React.FC = () => {
     
   )
 }
-
-const AbsoluteImageCircleRight = styled(AbsoluteImageCircle)`
-    right: 0;
-    left: unset;
-    transform: translate(50%, -50%);
-`

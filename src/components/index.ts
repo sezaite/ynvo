@@ -21,3 +21,4 @@ export * from './Input';
 //elements
 
 export * from './elements/Loader';
+export * from './elements/AbsoluteImage';

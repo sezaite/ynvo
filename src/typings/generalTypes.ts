@@ -24,3 +24,12 @@ export interface ReviewCardProps {
     likes?: number;
    
 }
+
+export interface PerfumeProps {
+    id: number | string, 
+    img: string,
+    name: string, 
+    brand: string,
+    notes: Array<string>,
+    about: string,
+}

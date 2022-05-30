@@ -10,9 +10,7 @@ const Home: React.FC = () => {
 	<>
 		<Navigation></Navigation>
 		<Hero></Hero>
-		<About></About>
-		<Features></Features>
-		<Reviews></Reviews>
+		
 	</>
 	)
 };

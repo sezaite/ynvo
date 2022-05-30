@@ -1,7 +1,7 @@
 import { Box, Typography, Image, FlexWrapper } from "components";
 import React from "react";
 import styled from "styled-components/macro";
-import { ReviewCardProps } from "../sections";
+import { ReviewCardProps } from "typings/generalTypes";
 
 
 export const ReviewCard: React.FC<ReviewCardProps> = ({image, stars, name, signatureSmell, review}) => {

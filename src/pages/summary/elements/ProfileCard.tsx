@@ -7,7 +7,7 @@ import { ProfileProps } from 'typings/generalTypes';
 
 export const ProfileCard: React.FC<ProfileProps> = ({image, nickname, listings}) => {
     return (
-        <FlexyCard  backgroundColor="primary" height='100%' width="100%" px='s30' py='s24' position='relative'>
+        <FlexyCard borderRadius='radius16' background="lightDirtyGradient" height='100%' width="100%" px='s30' py='s24' position='relative'>
                <FlexWrapper alignItems='center'>
                     <Image src={image} width='3rem' height="3rem" objectFit='cover' radius="50%" alt="profile picture of reviewer"></Image>
                     <Typography type='body14' ml='s12'>{nickname}</Typography>
