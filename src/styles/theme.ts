@@ -24,6 +24,7 @@ const background = {
 	secondaryGradient: 'linear-gradient(180deg, rgba(165,192,153,1) 0%, rgba(229,229,229,1) 100%)',
 	whiteGradient: 'linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(229,229,229,1) 100%);',
 	lightDirtyGradient: ' linear-gradient(180deg, rgba(224,212,212,0.6839110644257703) 0%, rgba(229,229,229,1) 100%);',
+	lightGradient: 'linear-gradient(180deg, rgba(253,251,236,1) 0%, rgba(255,255,255,1) 100%);'
 }	
 
 export const theme = {

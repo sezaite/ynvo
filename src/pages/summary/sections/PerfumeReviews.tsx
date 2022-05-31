@@ -1,9 +1,8 @@
-import { FlexWrapper, SectionWrapper, Image, Container, Typography, Box, AbsoluteImageCircle, AbsoluteImageLines} from 'components'
-import { ReviewCard } from 'pages/home/elements/ReviewCard';
 import React from 'react';
+import styled from 'styled-components/macro';
+import { FlexWrapper, SectionWrapper, Image, Container, Typography, Box, AbsoluteImageCircle, AbsoluteImageLines} from 'components'
 import { PerfumeReviewCard } from '../elements/PerfumeReviewCard';
 import { SwiperSlide, Swiper } from 'swiper/react';
-import styled from 'styled-components/macro';
 import { Pagination } from 'swiper';
 import 'swiper/css';
 import 'swiper/css/pagination';

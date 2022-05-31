@@ -1,24 +1,21 @@
 
 import React, {useState, useEffect} from 'react';
 import { Container, SectionWrapper, Typography, Image, Loader, Box, FlexWrapper, AbsoluteImageCircle, AbsoluteImageLines } from 'components';
-import {QuizNav} from './sections';
+import {QuizNav, CalculatingResults} from './sections';
 import {QuizCardCheckbox, QuizCardRadio } from './elements';
 import { useSelector } from 'react-redux';
 import { fetchQuestions } from 'state/thunks';
 import { useAppDispatch } from 'state/store';
-import { selectCurrentQuestion, selectQuizQuestion, selectStatus } from 'state/selectors';
+import { selectCurrentQuestion, selectQuizQuestion, selectStatus, selectIsQuizCompleted } from 'state/selectors';
 import { QuestionState } from 'state/types';
-import { DefaultButton } from 'components/buttons/DefaultButton';
-import { decrementCurrentQuestion } from 'state/slice';
-import styled from 'styled-components/macro'
-import { CalculatingResults } from './sections/CalculatingResults';
-
-
+import { completeQuiz } from 'state/slice';
+import { navigate } from 'gatsby';
 
 
 const Quiz: React.FC = () => {
 const dispatch = useAppDispatch();
 const status = useSelector(selectStatus);
+const isQuizCompleted = useSelector(selectIsQuizCompleted);
 const currentStep = useSelector(selectCurrentQuestion);
 const questions = useSelector(selectQuizQuestion);
 const [currentQuestion, setCurrentQuestion] = useState<QuestionState>();
@@ -30,10 +27,8 @@ const [count, setCount] = useState(0);
 
 
 useEffect(() => {
-    dispatch(fetchQuestions());
+    isQuizCompleted ? navigate('/summary') : dispatch(fetchQuestions());
 }, []);
-
-
 
   useEffect(() => {
     setCurrentQuestion(questions[currentStep]);
@@ -44,9 +39,10 @@ useEffect(()=> {
   if (count) {
     if ((totalQuestions - currentStep) < 2){
       setIsLast(true);
-    }
-   
-    ((totalQuestions - currentStep) < 1) && setShowCalculations(true);
+    } 
+   if ((totalQuestions - currentStep) < 1) {
+    setShowCalculations(true);
+   }
   }
  
 }, [currentQuestion])
@@ -79,7 +75,8 @@ useEffect(()=> {
                     </Container>
             </>
               :
-              <CalculatingResults></CalculatingResults>
+              showCalculations ? <CalculatingResults></CalculatingResults> : <Box width='5rem' height='5rem' mx='auto'><Loader></Loader></Box>
+              
             }
 </SectionWrapper> 
 
@@ -87,5 +84,4 @@ useEffect(()=> {
 }
 
 export default Quiz
-
 

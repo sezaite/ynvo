@@ -1,4 +1,4 @@
-import { Box, FlexWrapper, Loader, SectionWrapper, Typography } from "components";
+import { Box, Loader, SectionWrapper, Typography } from "components";
 import { navigate } from "gatsby";
 import React, { useState, useEffect } from "react";
 
@@ -45,7 +45,5 @@ return (
 </SectionWrapper>
 )
 }
-function useEffet(arg0: () => void, arg1: number[]) {
-    throw new Error("Function not implemented.");
-}
+
 

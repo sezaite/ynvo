@@ -13,7 +13,7 @@ import { mobile, smMobile } from 'styles/breakpoints';
 export const Hero: React.FC = () => {
 
 	const handleClick = () => {
-		navigate('/quiz'); //navigate to edit page
+		navigate('/quiz'); 
 	}
 	
 	return (

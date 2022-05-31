@@ -6,6 +6,7 @@ export const initialState: QuizState = {
   questions: [],
   currentQuestion: 0,
   status: "idle",
+  isCompleted: false,
 }
 
 const quizSlice = createSlice({
@@ -24,6 +25,9 @@ const quizSlice = createSlice({
         },
         decrementCurrentQuestion: (state) => {
             state.currentQuestion--;
+        },
+        completeQuiz: (state) => {
+            state.isCompleted = true;
         }
 
     },
@@ -48,7 +52,7 @@ const quizSlice = createSlice({
 	},
 }); 
 
-export const { setAnswers, incrementCurrentQuestion, decrementCurrentQuestion } = quizSlice.actions;
+export const { setAnswers, incrementCurrentQuestion, decrementCurrentQuestion, completeQuiz } = quizSlice.actions;
 export default quizSlice.reducer;
 
 

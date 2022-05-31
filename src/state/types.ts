@@ -30,6 +30,7 @@ export interface QuizState {
     currentQuestion: number,
     status: Statuses,
     questions: QuestionState[],
+    isCompleted: boolean,
     // answers: SelectedAnswersType[],
 }
 

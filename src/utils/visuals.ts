@@ -17,12 +17,13 @@ import instagram from 'assets/images/insta.svg';
 import message from 'assets/images/message.svg'
 import dummy from 'assets/images/dummy.jpg';
 import shark from 'assets/images/shark.webp';
-import logo from 'assets/images/logo-abstract.svg';
+import logo from 'assets/images/logo-bottle.png';
 import lines from 'assets/images/lines.svg';
 import animalprint from 'assets/images/animalprint.png';
 import naomi from 'assets/images/naomi.webp';
 import camel from 'assets/images/camel2.jpeg';
 import paw from 'assets/images/paw.png';
+import line5 from 'assets/images/line5.svg';
 
 
 export type Visuals = keyof typeof visuals;
@@ -51,5 +52,6 @@ export const visuals: Record<string, string> = {
 	animalprint,
 	naomi, 
 	camel,
-	paw
+	paw,
+	line5
 };

@@ -1,12 +1,14 @@
 import React from 'react';
-import { Box, Container, Typography, FlexWrapper, SectionWrapper, ContentWrapper } from 'components';
-import { ReviewCard } from '../elements/ReviewCard';
-import { Swiper, SwiperSlide } from 'swiper/react';
 import styled from 'styled-components/macro';
+import { Container, Typography, SectionWrapper } from 'components';
+import { ReviewCard } from '../elements';
+import { ReviewCardProps } from 'typings/generalTypes';
+
+import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination } from 'swiper';
 import 'swiper/css';
 import 'swiper/css/pagination';
-import { ReviewCardProps } from 'typings/generalTypes';
+
 
 
 export const Reviews: React.FC = () => {
@@ -17,10 +19,9 @@ export const Reviews: React.FC = () => {
         {id: "review1", image: 'profilePic3', stars: 4, name: "Sam", signatureSmell: "Y by M", review:"I have many friends who practice yoga and I decided to try it myself. It is the best decision I have made in a long time. With Positive Yoga program I started to lose weight, which was demotivating me for a long time. Also, I’ve learned about yoga philosophy and poses that encourage me to practice mindfulness and pay attention to stress reduction. I am very proud of myself. Feeling better is my biggest motivation."}
     ];
 
-
-    return <SectionWrapper background='secondaryGradient'>
+    return <SectionWrapper backgroundColor='light'>
         <Container>
-            <Typography type="h3" mb="s40" color="white" textAlign="center">What our community says about us</Typography>
+            <Typography type="h3" mb="s40" color="darkaccent" textAlign="center">What our community says about us</Typography>
                 <StyledSwiper
                     spaceBetween={100}
                     slidesPerView={1}

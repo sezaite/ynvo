@@ -1,7 +1,6 @@
-import { Box, Typography, FlexWrapper, Image } from "components";
-import { ImageStyled, ReviewCard, ReviewCardStyled } from "pages/home/elements/ReviewCard";
 import React from "react";
-import styled from "styled-components/macro";
+import { Box, Typography, FlexWrapper, Image } from "components";
+import { ReviewCardStyled } from "pages/checkout/elements/ReviewCard";
 import { ReviewCardProps } from "typings/generalTypes";
 
 

@@ -12,7 +12,7 @@ export const AbsoluteImageLines = styled(Image)`
   left: 0;
   transform: translate(0%, -50%);
   @media ${tablet} {
-    width: 220%;
+    width:160%;
     left: -50%;
   }
 

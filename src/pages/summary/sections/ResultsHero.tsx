@@ -4,19 +4,30 @@ import animalprint from 'assets/images/animalprint.png'
 import { SectionWithFullImg } from 'components/wrappers/SectionWithFullImg'
 import { PerfumeProps } from 'typings/generalTypes'
 import { PerfumeCard } from '../elements'
+import { completeQuiz } from 'state/slice'
+import { useAppDispatch } from 'state/store'
+import { useSelector } from 'react-redux'
+import { selectIsQuizCompleted } from 'state/selectors'
 
 
 const ResultsHero = () => {
 
     const [isLoaded, setIsLoaded] = useState(false);
     const [showResults, setShowResults] = useState(false);
-    
+    const isQuizCompleted = useSelector(selectIsQuizCompleted);
+    const dispatch = useAppDispatch();
 
 useEffect(()=> {
+    if (isQuizCompleted) {
+        setIsLoaded(true);
+        setShowResults(true);
+        return;
+    }
     setTimeout(()=>{
         setIsLoaded(true);
         setTimeout(()=>{
             setShowResults(true);
+            dispatch(completeQuiz());
         }, 2000)
     }, 2000)
 }, []);
@@ -36,7 +47,7 @@ const perfumes:PerfumeProps[] = [
 
 
   return (
-    <SectionWithFullImg pt='s60' backgroundImage={isLoaded && showResults ? animalprint : ""} backgroundColor='light' zIndex='upperElement'>
+    <SectionWithFullImg pt='s60' height={isLoaded && showResults ? "auto" : "200vh"} backgroundImage={isLoaded && showResults ? animalprint : ""} backgroundColor='light' zIndex='upperElement'>
         <Container>
             <Typography pt='s60' type='h4' textAlign='center'>{isLoaded? 'Turns out you are a real:' : "We calculated your results..."} </Typography>
             
@@ -49,8 +60,9 @@ const perfumes:PerfumeProps[] = [
             }
             
         </Container>
-
-        <Container>
+{
+    isLoaded && showResults ?
+    <Container>
 
             <Box maxWidth={{_: '100%', tablet: '50%'}} mx='auto'>
                 <Typography py='s60' textAlign='center' type='h4'>Here are the perfumes to match your vibe</Typography>
@@ -67,6 +79,10 @@ const perfumes:PerfumeProps[] = [
 
             </GridWrapper>
         </Container>
+
+        : ""
+}
+        
 
     </SectionWithFullImg>
     

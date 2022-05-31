@@ -1,19 +1,19 @@
-import { Navigation } from 'components/layout/Nav';
 import React from 'react';
-import { About, Features, Hero, Reviews } from './sections';
+import { Navigation } from 'components/layout/Nav';
+import { Hero } from './sections';
 
 
 
 
-const Home: React.FC = () => {
-	return(
+const Home: React.FC = () => 
 	<>
 		<Navigation></Navigation>
 		<Hero></Hero>
-		
 	</>
-	)
-};
+
+		
+
+
 
 export default Home;
 

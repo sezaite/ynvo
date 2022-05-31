@@ -2,10 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { QuestionState, AnswerType } from 'state/types';
 import { QuizCardStyled, QuizSelectOption } from '.';
 import {GridWrapper, Typography} from '../../../components';
-import {incrementCurrentQuestion, decrementCurrentQuestion, setAnswers} from 'state/slice';
-import { theme } from 'styles/theme';
-import { selectCurrentQuestion, selectQuizQuestion } from 'state/selectors';
-import { useDispatch, useSelector } from 'react-redux';
+import {incrementCurrentQuestion, setAnswers} from 'state/slice';
 import { useAppDispatch } from 'state/store';
 import { DefaultButton } from 'components/buttons/DefaultButton';
 

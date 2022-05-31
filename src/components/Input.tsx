@@ -1,16 +1,13 @@
 import React, {useState} from "react";
 import styled from "styled-components/macro";
-import { Theme } from "styles/theme";
+import { Colors, theme, Theme } from "styles/theme";
 import {Box, BoxStyles, Typography, FlexWrapper} from 'components';
-
-// export type InputProp = 'text' | 'number' | 'password' | 'email' | 'date';
 
 interface InputProps extends React.InputHTMLAttributes<HTMLIFrameElement> {
     id: string;
     minValue?: number;
     maxValue?: number;
     placeholder?: string;
-    // type: InputProp;
     onChange?: ()=> void;
     border?: string;
     borderRadius?: string;
@@ -18,7 +15,8 @@ interface InputProps extends React.InputHTMLAttributes<HTMLIFrameElement> {
 interface InputWrapProps extends InputProps {
     label?: string;
     errorMessage?: string;
-
+    backgroundColor?: Colors;
+    height?: string;
 }
 
 export const InputWrap: React.FC<InputWrapProps> = ({
@@ -27,21 +25,21 @@ export const InputWrap: React.FC<InputWrapProps> = ({
     maxValue,
     placeholder,
     type,
-    border, 
-    borderRadius,
+    border,
+    height, 
     label, 
     errorMessage, 
-    // ...rest // "This spread always overwrites this property."
+    ...rest
 }) => {
     const [isError, setIserror] = useState(true);
     const [value, setValue] = useState<string>("");
     return (
-        <FlexWrapper>
-            {label && <Typography type="label12" htmlFor={id}>{label}</Typography>}
+        <FlexWrapper flexDirection='column'>
+            {label && <Typography mb='s8' type="label12" fontWeight='fw600' textTransform="capitalize" htmlFor={id}>{label}</Typography>}
             {type=='number' || type=='date' ? 
-            <Input border={border} as="input" py='s10' px='s16' id={id} type={type} value={value} onChange={(e: React.FormEvent<HTMLInputElement>)=>setValue(e.currentTarget.value)} placeholder={placeholder? placeholder : ""} min={minValue ? minValue : 0} max={maxValue ? maxValue : Infinity}/> 
+            <Input height={height} width='100%' borderRadius='radius8' border={border} as="input" py='s10' px='s16' id={id} type={type} value={value} onChange={(e: React.FormEvent<HTMLInputElement>)=>setValue(e.currentTarget.value)} placeholder={placeholder? placeholder : ""} min={minValue ? minValue : 0} max={maxValue ? maxValue : Infinity}/> 
             :
-            <Input border={border} as="input" py='s10' px='s16' id={id} type={type} value={value} onChange={(e: React.FormEvent<HTMLInputElement>)=>setValue(e.currentTarget.value)} placeholder={placeholder? placeholder : ""}/>
+            <Input height={height} width='100%' borderRadius='radius8' border={border} as="input" py='s10' px='s16' id={id} type={type} value={value} onChange={(e: React.FormEvent<HTMLInputElement>)=>setValue(e.currentTarget.value)} placeholder={placeholder? placeholder : ""}/>
 }
             
             {isError && <Typography type="caption12" color="accent">{errorMessage}</Typography>}

@@ -17,6 +17,7 @@ export * from './Image';
 //inputs 
 
 export * from './Input';
+export * from './TextArea';
 
 //elements
 

@@ -1,5 +1,5 @@
 import { Box, Typography, FlexWrapper, Image } from "components";
-import { ImageStyled, ReviewCard, ReviewCardStyled } from "pages/home/elements/ReviewCard";
+import { ReviewCardStyled } from "pages/checkout/elements/ReviewCard";
 import React from "react";
 import styled from "styled-components/macro";
 import { ProfileProps } from 'typings/generalTypes';
@@ -35,5 +35,4 @@ export const ProfileCard: React.FC<ProfileProps> = ({image, nickname, listings})
 export const FlexyCard = styled(ReviewCardStyled)`
     display: flex;
     flex-direction: column;
-    /* justify-content: space-between; */
 `
