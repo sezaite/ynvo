@@ -12,14 +12,14 @@ export const PerfumeCard:React.FC<PerfumeProps> = ({name, notes, brand, img, abo
             <Typography textAlign='center' type='h5'>{name}</Typography>
             <Typography textAlign='center' type='h6'>by {brand}</Typography>
       </Box>           
-        <FlexWrapper my="s40" justifyContent='space-between'>
+        <FlexWrapper my="s40" justifyContent={{_: 'flex-start', lmobile: 'space-between'}}>
             <Image src={img} alt='perfume buttle image' width='5rem' objectFit='contain'></Image>
-            <FlexWrapper as="ul" flexDirection='column' alignItems='end'>
+            <FlexWrapper ml={{_: 's16', lmobile: 's0'}} as="ul" flexDirection='column' alignItems={{_: 'start', lmobile: 'end'}}>
                {
                    notes.map((note)=>(
                     <FlexWrapper key={note} alignItems='center'>
-                        <Typography whiteSpace="nowrap">{note}</Typography>
-                        <Box backgroundColor='darkaccent' width='0.5rem' height='0.5rem' ml='s10' borderRadius='circle'></Box>
+                        <Typography>{note}</Typography>
+                        <Box backgroundColor='darkaccent' width='0.5rem' height='0.5rem' ml='s10' borderRadius='circle' display={{_: 'none', lmobile: 'inline-block'}}></Box>
                       </FlexWrapper>
                    ))
                }

@@ -1,11 +1,8 @@
 import React, { useEffect, useState } from 'react'
-import { QuestionState, AnswerType } from 'state/types';
+import { QuestionState } from 'state/types';
 import { QuizCardStyled, QuizSelectOption } from '.';
 import {GridWrapper, Typography} from '../../../components';
-import {incrementCurrentQuestion, decrementCurrentQuestion, setAnswers} from 'state/slice';
-import { theme } from 'styles/theme';
-import { selectCurrentQuestion, selectQuizQuestion } from 'state/selectors';
-import { useDispatch, useSelector } from 'react-redux';
+import {incrementCurrentQuestion, setAnswers} from 'state/slice';
 import { useAppDispatch } from 'state/store';
 import { DefaultButton } from 'components/buttons/DefaultButton';
 
@@ -62,7 +59,7 @@ useEffect(()=> {
     <QuizCardStyled backgroundColor='white'>
       <Typography textAlign="center" mb="s24">{questionData.caption ? questionData.caption : "Pick the one which suits you best"}</Typography>
     
-      <GridWrapper gridGap="16px" gridTemplateColumns={questionData.answers.length > 3 ? "1fr 1fr" : "1fr"}> 
+      <GridWrapper gridGap="16px" gridTemplateColumns={questionData.answers.length > 3 ? {_: '1fr', lmobile: '1fr 1fr'} : "1fr"}> 
       {
      question.answers.map(({ answer, id, isSelected })=>(
       
@@ -71,11 +68,8 @@ useEffect(()=> {
         }
         </GridWrapper>
         {
-        isLast &&  <DefaultButton isDisabled={isButtonDisabled} type="button" onClick={finishQuiz}>Finish quiz</DefaultButton>
+        isLast &&  <DefaultButton mt='s24' px='s40' mx='auto' isDisabled={isButtonDisabled} type="button" onClick={finishQuiz}>Finish quiz</DefaultButton>
         }
-
-
-
     </QuizCardStyled>
   )
 }

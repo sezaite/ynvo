@@ -1,10 +1,10 @@
 import React from 'react';
-import { Container, SectionWrapper, Typography, Box, InputWrap, FlexWrapper, Image, ContentWrapper, GridWrapper } from 'components';
-import { DefaultButton } from 'components/buttons/DefaultButton';
-import { ProfileProps, ReviewCardProps } from 'typings/generalTypes';
-import { ProfileCard } from '../elements';
-import { AbsoluteImageCircle } from 'pages/quiz';
 import styled from 'styled-components/macro';
+import { Container, SectionWrapper, Typography, ContentWrapper, GridWrapper } from 'components';
+import { ProfileProps } from 'typings/generalTypes';
+import { ProfileCard } from '../elements';
+import { ltablet, mobile } from 'styles/breakpoints';
+
 
 export const SampleHunt:React.FC = () => {
     const profiles:ProfileProps[] = [
@@ -28,18 +28,29 @@ export const SampleHunt:React.FC = () => {
               <Typography opacity='op60' mb='s30'>Here are a few of our most active Fragrance Junkies who are willing to share</Typography>
 
               </ContentWrapper>
-             <GridWrapper gridGap='12px' gridTemplateColumns={{_: '1fr', lmobile: '1fr 1fr',  tablet: '1fr 1fr 1fr'}}>
+             <CenteredGrid gridGap='12px' gridTemplateColumns={{_: '1fr', lmobile: '1fr 1fr',  ltablet: '1fr 1fr 1fr'}}>
              {
                    profiles.map(({id, image, nickname, listings}) => (
                         
                         <ProfileCard id={id} key={id} image={image} listings={listings} nickname={nickname}></ProfileCard>
                         ))
                     }
-             </GridWrapper>
-             
-         
+             </CenteredGrid>
       </Container>
     </SectionWrapper>
     
   )
 }
+
+export const CenteredGrid = styled(GridWrapper)`
+  & > div:last-of-type {
+    @media ${ltablet} {
+      grid-column: span 2;
+      max-width: 50%;
+    }
+    @media ${mobile} {
+      grid-column: span 1;
+      max-width: 100%;
+    }
+  }
+`

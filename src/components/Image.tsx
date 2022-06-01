@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components/macro';
 import LazyLoad from 'react-lazyload';
-
+import { position, PositionProps } from 'styled-system';
 import { mobile, tablet } from 'styles/breakpoints';
 import { Visuals, visuals } from 'utils/visuals';
 
@@ -15,9 +15,10 @@ interface Styles {
 	objectFit?: string;
 	hoverColor?: string;
 	maxWidthMobile?: string;
+	transform?: string;
 }
 
-interface ImageProps extends Styles {
+interface ImageProps extends Styles, PositionProps  {
 	src: Visuals;
 	mobile_src?: Visuals;
 	onClick?: () => void;
@@ -32,6 +33,11 @@ const Img = styled.img<Styles>`
 	max-height: ${({ maxHeight }) => maxHeight || ''};
 	border-radius: ${({ radius }) => radius || ''};
 	object-fit: ${({ objectFit }) => objectFit || ''};
+	transform: ${({ transform }) => transform || ''};
+
+	&& {
+        ${position}
+    }
 	//TODO: svg elements and hovers
 
 	@media ${tablet}{

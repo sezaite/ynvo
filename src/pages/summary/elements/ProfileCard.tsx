@@ -1,4 +1,4 @@
-import { Box, Typography, FlexWrapper, Image } from "components";
+import { Box, Typography, FlexWrapper, Image, LinkWithIcon } from "components";
 import { ReviewCardStyled } from "pages/checkout/elements/ReviewCard";
 import React from "react";
 import styled from "styled-components/macro";
@@ -15,7 +15,7 @@ export const ProfileCard: React.FC<ProfileProps> = ({image, nickname, listings})
            
                 <Box>
                     
-                    <Box as='ul' my='s16'>
+                    <Box as='ul' mt='s16' mb='s20'>
                     {
                         listings.map(({name, link}) => (
                         <Box as='li' key={name}><Box as="a" href={link}><Typography textDecoration='underline'>{name}</Typography></Box></Box>
@@ -24,10 +24,10 @@ export const ProfileCard: React.FC<ProfileProps> = ({image, nickname, listings})
                     </Box>
                     
             </Box>
-            <FlexWrapper mt='auto' as='button' alignItems='center' p='s8'>
-                        <Image src='message' alt='message icon'></Image>
-                        <Typography ml='s8'>Message them!</Typography>
-                    </FlexWrapper>
+            <Box mt='auto' mx='auto'>
+            <LinkWithIcon text='Message them!' link='#' img='message' backgroundColor="accent" color="white"></LinkWithIcon>
+
+            </Box>
         </FlexyCard>
     )
 }

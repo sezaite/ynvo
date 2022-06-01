@@ -1,5 +1,4 @@
 import heroPic from 'assets/images/hero.jpg';
-import smoke from 'assets/images/smoke.png';
 import julep from 'assets/images/julep.webp';
 import profilePic from 'assets/images/user.jpg';
 import profilePic2 from 'assets/images/profilePic2.jpg';
@@ -14,7 +13,7 @@ import shadows from 'assets/images/shadows.jpg';
 import haze from 'assets/images/haze.webp';
 import heart from 'assets/images/heart.svg';
 import instagram from 'assets/images/insta.svg';
-import message from 'assets/images/message.svg'
+import message from 'assets/images/text.svg'
 import dummy from 'assets/images/dummy.jpg';
 import shark from 'assets/images/shark.webp';
 import logo from 'assets/images/logo-bottle.png';
@@ -22,14 +21,14 @@ import lines from 'assets/images/lines.svg';
 import animalprint from 'assets/images/animalprint.png';
 import naomi from 'assets/images/naomi.webp';
 import camel from 'assets/images/camel2.jpeg';
-import paw from 'assets/images/paw.png';
-import line5 from 'assets/images/line5.svg';
+import arrow from 'assets/images/arr-right.svg'
+import arrowBack from 'assets/images/arr-left.svg'
+
 
 
 export type Visuals = keyof typeof visuals;
 export const visuals: Record<string, string> = {
 	heroPic,
-	smoke,
 	julep,
 	profilePic,
 	profilePic2,
@@ -52,6 +51,6 @@ export const visuals: Record<string, string> = {
 	animalprint,
 	naomi, 
 	camel,
-	paw,
-	line5
+	arrow,
+	arrowBack
 };

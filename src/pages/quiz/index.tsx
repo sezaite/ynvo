@@ -1,6 +1,6 @@
 
 import React, {useState, useEffect} from 'react';
-import { Container, SectionWrapper, Typography, Image, Loader, Box, FlexWrapper, AbsoluteImageCircle, AbsoluteImageLines } from 'components';
+import { Container, SectionWrapper, Typography, Loader, Box, AbsoluteImageCircle, AbsoluteImageLines } from 'components';
 import {QuizNav, CalculatingResults} from './sections';
 import {QuizCardCheckbox, QuizCardRadio } from './elements';
 import { useSelector } from 'react-redux';
@@ -8,7 +8,6 @@ import { fetchQuestions } from 'state/thunks';
 import { useAppDispatch } from 'state/store';
 import { selectCurrentQuestion, selectQuizQuestion, selectStatus, selectIsQuizCompleted } from 'state/selectors';
 import { QuestionState } from 'state/types';
-import { completeQuiz } from 'state/slice';
 import { navigate } from 'gatsby';
 
 
@@ -49,12 +48,12 @@ useEffect(()=> {
 
 
   return (
-      <SectionWrapper backgroundColor='primary'>
+      <SectionWrapper height='100vh' background='lightGradient' overflow='hidden'>
             {
             
               status == 'success' && currentQuestion ? 
             <>
-              <AbsoluteImageLines src="shape1" alt="decoration shape"></AbsoluteImageLines>
+              <AbsoluteImageLines width='100%' src="shape1" alt="decoration shape"></AbsoluteImageLines>
               <AbsoluteImageCircle src="shape2" alt="decoration shape"></AbsoluteImageCircle>
                 <QuizNav totalQuestions={totalQuestions} currentStep={currentStep}/> 
                 

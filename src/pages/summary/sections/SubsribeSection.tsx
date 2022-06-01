@@ -1,13 +1,8 @@
 import React from 'react';
-import { Container, Typography, Box, InputWrap, FlexWrapper, Image } from 'components';
-import { SectionWithFullImg } from 'components/wrappers/SectionWithFullImg';
-import { DefaultButton } from 'components/buttons/DefaultButton';
-import animalprint from 'assets/images/animalprint.png'
+import { Container, Typography, Box, FlexWrapper, Image, SectionWithFullImg } from 'components';
 
-export const SubsribeSection:React.FC = () => {
-
-  return (
-      <SectionWithFullImg backgroundColor='primary' backgroundImage={animalprint}>
+export const SubsribeSection:React.FC = () => 
+      <SectionWithFullImg backgroundColor='primary' src='animalprint'>
       <Container>
       <Box>
         <Typography color="dark" type="h2" mb='s30'>
@@ -26,7 +21,4 @@ export const SubsribeSection:React.FC = () => {
         </FlexWrapper>
       </Box>
     </Container>
-    </SectionWithFullImg>
-  )
-
-}
+  </SectionWithFullImg>

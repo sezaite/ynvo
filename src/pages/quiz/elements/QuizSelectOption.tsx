@@ -5,6 +5,7 @@ import { theme } from "styles/theme";
 import { useDispatch, useSelector } from 'react-redux';
 import { incrementCurrentQuestion } from "state/slice";
 import { useAppDispatch } from "state/store";
+import { smMobile } from "styles/breakpoints";
 
 
 interface Props {
@@ -26,8 +27,8 @@ export const QuizSelectOption: React.FC<Props> = ({option, id, onClickOption, is
     }
     return (
         
-        <OptionStyled position='relative' onClick={()=>handleClick()} border={isSelected ? `1px solid ${theme.colors.secondary}` : ''}>
-            <Typography color={isSelected ? 'selected' : 'dark'} >{option}</Typography>
+        <OptionStyled position='relative' onClick={()=>handleClick()} border={isSelected ? `1px solid ${theme.colors.accent}` : ''}>
+            <Typography color={isSelected ? 'accent' : 'dark'} >{option}</Typography>
             {
                 isSelected ?  <Box position='absolute' top='s8' right='s8'><Image src="tickCircle" alt="checkmark"></Image></Box> : ""
             }
@@ -39,14 +40,14 @@ export const QuizSelectOption: React.FC<Props> = ({option, id, onClickOption, is
 
 const OptionStyled = styled(Box)`
     border-radius: ${theme.radii['radius8']};
-    border: 1px solid ${theme.colors.transparent};
+    border: ${theme.borders.primary};
     padding: ${theme.space.s16} ${theme.space.s24};
     background-color: white;
     &:hover {
-        border: 1px solid ${theme.colors.secondary};
+        border: 1px solid ${theme.colors.accent};
+    }
+    @media ${smMobile}{
+        padding: ${theme.space.s10} ${theme.space.s20};
     }
 `
 
-function dispatch(arg0: { payload: undefined; type: string; }) {
-    throw new Error("Function not implemented.");
-}

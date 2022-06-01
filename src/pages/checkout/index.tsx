@@ -6,7 +6,7 @@ const Checkout = () =>
     <>
         <CheckoutContact></CheckoutContact>
         <Reviews></Reviews>
-        <JoinTheCommunity title="Why don't you become a part of us?"></JoinTheCommunity>
+        <JoinTheCommunity src='shadows' title="Why don't you become a part of us?"></JoinTheCommunity>
     </>
 
 

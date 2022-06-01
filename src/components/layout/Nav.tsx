@@ -1,12 +1,6 @@
-import { Box } from "components";
-import { DefaultButton } from "components/buttons/DefaultButton";
-
-import { FlexWrapper, Image, SectionWrapper, Container, Typography } from "components";
-
+import { FlexWrapper, Image, Container, Typography, Box, DefaultButton } from "components";
 import { Link } from "gatsby";
-import { StaticImage } from "gatsby-plugin-image";
 import React from "react";
-import styled from "styled-components/macro";
 
 
 export const Navigation: React.FC = () => {
@@ -17,8 +11,6 @@ export const Navigation: React.FC = () => {
                         <Image src='logo' alt='logo' width="3rem"></Image>
                         <FlexWrapper as="ul" justifyContent='flex-end' alignItems="center">
                             <Box as ="li" mr={{_: 's20', tablet: 's40'}} ><Link to="#"><Typography textDecoration='none' color="primary">About</Typography></Link></Box>
-                            <Box as ="li" mr={{_: 's20', tablet: 's40'}}><Link to="#"><Typography textDecoration='none' color="primary">Features</Typography></Link></Box>
-
                             <Box as ="li"><DefaultButton>Contact</DefaultButton></Box>
                         </FlexWrapper>
                     </FlexWrapper>

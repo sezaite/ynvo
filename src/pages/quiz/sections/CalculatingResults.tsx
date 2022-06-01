@@ -17,11 +17,8 @@ useEffect(() => {
             percentage+=17;
             return percentage;
         })
-      }, 300);
+      }, 500);
     }
-        setTimeout(()=>{
-            navigate('/summary');
-        }, 3000)
       return () => clearInterval(intervalID);
   }, [isCounting]);
 
@@ -30,6 +27,7 @@ useEffect(() => {
         
         setIsCounting(false);
         setPercentage(100);
+        navigate('/summary');
     }
   }, [percentage])
 

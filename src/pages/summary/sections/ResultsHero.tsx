@@ -28,8 +28,8 @@ useEffect(()=> {
         setTimeout(()=>{
             setShowResults(true);
             dispatch(completeQuiz());
-        }, 2000)
-    }, 2000)
+        }, 1000)
+    }, 1000)
 }, []);
 
 const perfumes:PerfumeProps[] = [
@@ -47,9 +47,9 @@ const perfumes:PerfumeProps[] = [
 
 
   return (
-    <SectionWithFullImg pt='s60' height={isLoaded && showResults ? "auto" : "200vh"} backgroundImage={isLoaded && showResults ? animalprint : ""} backgroundColor='light' zIndex='upperElement'>
+    <SectionWithFullImg pt='s60' height={isLoaded && showResults ? "auto" : "200vh"} src={isLoaded && showResults ? "animalprint" : ""} backgroundColor='light' zIndex='upperElement'>
         <Container>
-            <Typography pt='s60' type='h4' textAlign='center'>{isLoaded? 'Turns out you are a real:' : "We calculated your results..."} </Typography>
+            <Typography pt='s60' type='h4' textAlign='center'>{isLoaded? 'Turns out you are a real:' : "We have calculated your results..."} </Typography>
             
             {
                 isLoaded && showResults ? <Typography my='s60' type='jumbo' textAlign='center' letterSpacing='large' color='darkaccent' textTransform='uppercase'>Animalic Diva</Typography> :

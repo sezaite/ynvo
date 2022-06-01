@@ -39,7 +39,7 @@ export const ReviewCard: React.FC<ReviewCardProps> = ({image, stars, name, signa
 
 export const ReviewCardStyled = styled(Box)`
     position: relative;
-    border-radius: 0 1rem 1rem 0;
+    border-radius: 1rem;
     margin: 0 auto;
     width: 70%;
     height: 100%;

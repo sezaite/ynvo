@@ -12,7 +12,7 @@ import { DefaultButton } from 'components/buttons/DefaultButton';
 const reviews:ReviewCardProps[] = [
   {id: "review1", likes: 11, title: 'WOW I really like this', image: 'profilePic', stars: 5, name: "Steve French", signatureSmell: "X by X", review:"Antique mall with sandalwood and oud. Different, but I like it"},
   {id: "review1", likes: 2, title: 'No one should ever wear this, unless trying to seduce a dumpster.', image: 'profilePic2', stars: 5, name: "Gina Naus", signatureSmell: "Y by X", review: "An unbelievable melon-oud stank bomb of colossal proportions, as if stuffing a rotten log with decaying fruit and spraying over with honey-scented air freshener to (unsuccessfully) cover up... making the end result even more disgusting than it would otherwise be if left alone."},
-  {id: "review1", likes: 26, title: "STUNNING", image: 'profilePic3', stars: 4, name: "Sam", signatureSmell: "Y by M", review:"he cantaloupe note is mouthwatering and the oud is smooth and addictive. I don’t even really like oud and I can not get enough of this fragrance. Signature scent worthy. Just bought a full bottle."}
+  {id: "review1", likes: 26, title: "STUNNING", image: 'profilePic3', stars: 4, name: "Sam", signatureSmell: "Y by M", review:"The cantaloupe note is mouthwatering and the oud is smooth and addictive. I don’t even really like oud and I can not get enough of this fragrance. Signature scent worthy. Just bought a full bottle."}
 ];
 
 export const PerfumeReviews = () => {
@@ -22,7 +22,7 @@ export const PerfumeReviews = () => {
       {/* <AbsoluteImageCircle src="shape2" alt="decoration shape"></AbsoluteImageCircle> */}
       <Container zIndex='upperElement' position='relative'>
       <Typography textAlign="center" type='h3' mb='s64'>
-               Here's what our community thinks about your new signature smell:
+               Here's what people think about your new signature smell:
               </Typography>
       <FlexWrapper alignItems='center' flexDirection={{ _: 'column', tablet: 'row'}}>
             <Box  mx='auto' maxWidth={{ _: '30rem', tablet: '40%', ltablet: '50%'}} mb='s24'>
@@ -44,8 +44,8 @@ export const PerfumeReviews = () => {
                     </StyledSwiper>
             </Box>
         </FlexWrapper>
-        <FlexWrapper justifyContent='center'>
-          <DefaultButton mr='s16' mt='s40'>Show another</DefaultButton> <DefaultButton backgroundColor='darkaccent' mt='s40'>Where to get one?</DefaultButton>
+        <FlexWrapper justifyContent='center' flexDirection={{_: 'column', lmobile: 'row'}}>
+          <DefaultButton width={{_: '100%', lmobile: 'fit-content'}} mr='s16' mt='s40'>Show another</DefaultButton> <DefaultButton width={{_: '100%', lmobile: 'fit-content'}} backgroundColor='darkaccent' mt={{_: 's24', lmobile: 's40'}}>Where to get one?</DefaultButton>
         </FlexWrapper>
       </Container>
     </SectionWrapper>

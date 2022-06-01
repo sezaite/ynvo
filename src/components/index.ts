@@ -6,6 +6,7 @@ export * from './wrappers/ContainerLG';
 export * from './wrappers/FlexWrapper';
 export * from './wrappers/GridWrapper';
 export * from './wrappers/ContentWrapper';
+export * from './wrappers/SectionWithFullImg';
 
 //texts
 // export * from './texts/h1';
@@ -23,3 +24,8 @@ export * from './TextArea';
 
 export * from './elements/Loader';
 export * from './elements/AbsoluteImage';
+
+export * from './buttons/DefaultButton';
+export * from './buttons/LinkWithIcon';
+export * from './buttons/BackButton';
+// export * from './buttons/BaseButton';

@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react'
-import { QuestionState, AnswerType } from 'state/types';
+import { QuestionState } from 'state/types';
 import { QuizCardStyled, QuizSelectOption } from '.';
-import {GridWrapper, Typography} from '../../../components';
+import {GridWrapper, Typography,DefaultButton} from 'components';
 import {incrementCurrentQuestion, setAnswers} from 'state/slice';
 import { useAppDispatch } from 'state/store';
-import { DefaultButton } from 'components/buttons/DefaultButton';
+
 
 interface QuizStyled {
   questionData: QuestionState;
@@ -57,9 +57,9 @@ const submitQuestion = () => {
 
 
   return (
-    <QuizCardStyled backgroundColor='light'>
+    <QuizCardStyled backgroundColor='white'>
       <Typography textAlign="center" mb="s24">{questionData.caption ? questionData.caption : "Select as many as you want"}</Typography>
-      <GridWrapper gridGap="16px" gridTemplateColumns={questionData.answers.length > 3 ? "1fr 1fr" : "1fr"}> 
+      <GridWrapper gridGap="16px" gridTemplateColumns={questionData.answers.length > 3 ? {_: '1fr', lmobile: '1fr 1fr'} : "1fr"}> 
       {
      question.answers.map(({ answer, id, isSelected })=>(
           <QuizSelectOption isSelected={isSelected} key={id} option={answer} id={id} onClickOption={onClickOption}></QuizSelectOption>

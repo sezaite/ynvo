@@ -1,15 +1,14 @@
 import React from 'react';
-import { Container, ContentWrapper, SectionWrapper, Typography } from 'components';
-import { DefaultButton } from 'components/buttons/DefaultButton';
+import { Container, ContentWrapper, SectionWrapper, Typography, DefaultButton } from 'components';
 
 export interface ComunitySectionProps {
    title: string;
    text?: string;
+   src?: string;
 }
 
-export const JoinTheCommunity:React.FC<ComunitySectionProps> = ({text, title}) => 
-    <SectionWrapper background='lightGradient'>
-   
+export const JoinTheCommunity:React.FC<ComunitySectionProps> = ({text, title, src}) => 
+    <SectionWrapper background={src? '' : 'lightGradient'} src={src ? src : ""}>
          <Container zIndex='upperElement' position='relative'>
            <ContentWrapper>
            <Typography color="dark" type="h4" mb='s30' textAlign='center'>

@@ -3,9 +3,7 @@ export type Background = keyof typeof background;
 
 const colors = {
 	primary: '#E5E5E5',//light grey
-	// secondary: '#A5C099', //light green 
 	secondary: '#57704b',
-	selected: '#577a46',
 	accent: '#CF9EAC',//dirty pink
 	dark: '#1f1d1d',//dark
 	light: '#fdfbec',
@@ -97,7 +95,7 @@ export const theme = {
 			fontSize: '7rem',
 			lineHeight: '1em',
 			fontWeight: 700,
-			fontSizeMobile: "6rem",
+			fontSizeMobile: "3rem",
 		},
 		h1: {
 			fontSize: '4.125rem',
