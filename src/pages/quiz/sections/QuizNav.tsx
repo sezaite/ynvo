@@ -19,7 +19,7 @@ export const QuizNav:React.FC<NavProps> = ({totalQuestions, currentStep}) => {
     <Box pt="s24" zIndex='upperElement' position='relative'>
       <Container>
         <QuizNavigation>
-          <QuizProgress style={{width: `${ ((currentStep + 1)* 100) / 5}%`}}></QuizProgress>
+          <QuizProgress style={{width: `${ ((currentStep + 1)* 100) / totalQuestions}%`}}></QuizProgress>
         </QuizNavigation>
         <FlexWrapper justifyContent="space-between">
           {

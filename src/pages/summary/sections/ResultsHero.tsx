@@ -1,6 +1,5 @@
-import { Container, Loader, SectionWrapper, Typography, Box, GridWrapper } from 'components'
+import { Container, Loader, Typography, Box, GridWrapper } from 'components'
 import React, { useEffect, useState } from 'react'
-import animalprint from 'assets/images/animalprint.png'
 import { SectionWithFullImg } from 'components/wrappers/SectionWithFullImg'
 import { PerfumeProps } from 'typings/generalTypes'
 import { PerfumeCard } from '../elements'
@@ -63,10 +62,15 @@ const perfumes:PerfumeProps[] = [
 {
     isLoaded && showResults ?
     <Container>
-
             <Box maxWidth={{_: '100%', tablet: '50%'}} mx='auto'>
-                <Typography py='s60' textAlign='center' type='h4'>Here are the perfumes to match your vibe</Typography>
-                <Typography pb='s40' textAlign='center'>We dare you to one of them! And then another. And then another</Typography>
+                <Typography type='h3' textAlign='center' py='s40'>
+                    You never play safe. You're 
+                    <Typography type='span' color='darkaccent' letterSpacing='large'> brave, adventurous </Typography> and 
+                     <Typography type='span' color='darkaccent' letterSpacing='large' > bold</Typography>, but still rather <Typography type='span' color='darkaccent' letterSpacing='large'>sweet</Typography></Typography>
+
+
+                <Typography py='s60' textAlign='center' type='h4'>Here are the perfumes we think will match your vibe perfectly</Typography>
+                <Typography pb='s40' textAlign='center' type='body20'>We dare you to try one of them! And then another. And then another</Typography>
             </Box>
 
             <GridWrapper gridGap='s24' gridTemplateColumns={{_: '1fr', ltablet: 'repeat(3, 1fr)'}}>

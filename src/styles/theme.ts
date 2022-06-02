@@ -119,7 +119,7 @@ export const theme = {
 			lineHeight: '1.3em',
 		},
 		h4: {
-			fontSize: '3rem',
+			fontSize: '2.8rem',
 			fontSizeMobile: '2rem',
 			fontWeight: 400,
 			lineHeight: '1.3em',

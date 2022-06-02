@@ -48,7 +48,7 @@ useEffect(()=> {
 
 
   return (
-      <SectionWrapper height='100vh' background='lightGradient' overflow='hidden'>
+      <SectionWrapper height='100vh' background='lightGradient' overflow-x='hidden'>
             {
             
               status == 'success' && currentQuestion ? 
